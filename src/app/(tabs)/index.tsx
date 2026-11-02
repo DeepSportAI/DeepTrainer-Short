@@ -171,7 +171,7 @@ export default function AthletesHome() {
                     <FilterChip
                       key={key}
                       label={t(`athletes.filters.${key}`)}
-                      count={counts[key]}
+                      count={loading ? null : counts[key]}
                       active={filter === key}
                       onPress={() => setFilter(key)}
                     />
