@@ -1,0 +1,1292 @@
+{
+  "common": {
+    "back": "Back",
+    "cancel": "Cancel",
+    "close": "Close",
+    "save": "Save",
+    "retry": "Try again",
+    "optional": "optional",
+    "bmi": "BMI",
+    "months": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ],
+    "monthsLong": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ],
+    "weekdaysShort": [
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat"
+    ],
+    "weekdaysLong": [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ]
+  },
+  "nav": {
+    "athletes": "Athletes",
+    "tests": "Tests",
+    "startTest": "Test",
+    "exercises": "Exercises",
+    "settings": "Settings"
+  },
+  "units": {
+    "kg": "kg",
+    "cm": "cm",
+    "m": "m",
+    "seconds": "s",
+    "minutes": "min",
+    "bpm": "bpm",
+    "reps": "reps",
+    "degrees": "°",
+    "percent": "%",
+    "metersPerSecond": "m/s"
+  },
+  "time": {
+    "ago": {
+      "today": "today",
+      "yesterday": "yesterday",
+      "days_one": "{{count}} day ago",
+      "days_other": "{{count}} days ago",
+      "weeks_one": "{{count}} week ago",
+      "weeks_other": "{{count}} weeks ago",
+      "months_one": "{{count}} month ago",
+      "months_other": "{{count}} months ago"
+    }
+  },
+  "athletes": {
+    "title": "Athletes",
+    "add": "Add athlete",
+    "search": "Search athletes",
+    "clearSearch": "Clear search",
+    "stats": {
+      "athletes": "Athletes",
+      "thisWeek": "Tested this week",
+      "inProgress": "In progress"
+    },
+    "filters": {
+      "all": "All",
+      "inProgress": "In progress",
+      "noTest": "No test",
+      "evaluated": "Evaluated"
+    },
+    "card": {
+      "age": "{{age}} yrs",
+      "lastTest": "Last test",
+      "noTest": "No test yet",
+      "tests": "Tests",
+      "stepsLabel": "Completed tests",
+      "openHint": "Opens the analysis page",
+      "continue": "Continue test",
+      "nextLabel": "Recommended next test",
+      "programs_one": "{{count}} program",
+      "programs_other": "{{count}} programs"
+    },
+    "empty": {
+      "first": {
+        "title": "Add your first athlete",
+        "description": "Register the athlete, run the first-session test program and share the PDF report.",
+        "action": "Add athlete"
+      },
+      "filtered": {
+        "title": "No athletes in this filter",
+        "description": "Change the search or the filter.",
+        "action": "Clear filter"
+      }
+    }
+  },
+  "athleteForm": {
+    "newTitle": "New athlete",
+    "newSubtitle": "Tests will be run on this person",
+    "editTitle": "Edit details",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "genderLabel": "Gender",
+    "gender": {
+      "female": "Female",
+      "male": "Male"
+    },
+    "birthYear": "Birth year",
+    "height": "Height (cm)",
+    "weight": "Weight (kg)",
+    "phone": "Phone",
+    "email": "Email",
+    "note": "Note",
+    "notePlaceholder": "e.g. office worker, can come twice a week",
+    "create": "Save and continue",
+    "delete": "Delete athlete",
+    "deleteConfirm": {
+      "title": "Delete athlete?",
+      "description": "{{name}} and all their tests and programs will be permanently deleted from this device."
+    },
+    "errors": {
+      "firstName": "First name is required.",
+      "lastName": "Last name is required.",
+      "birthYear": "Enter a four-digit year (e.g. 1995).",
+      "range": "Enter a valid value.",
+      "email": "Enter a valid email.",
+      "save": "Could not save. Try again."
+    }
+  },
+  "athleteDetail": {
+    "more": "More actions",
+    "notFound": "Athlete not found.",
+    "takeTest": "Take test",
+    "continueTest": "Continue test",
+    "createProgram": "Create program",
+    "stats": {
+      "tests": "Tests",
+      "lastTest": "Last test",
+      "waist": "Waist"
+    },
+    "tabs": {
+      "analysis": "Analysis",
+      "history": "History",
+      "programs": "Programs"
+    },
+    "menu": {
+      "edit": "Edit details",
+      "newSession": "New test session",
+      "newSessionHint": "Retest: compared with earlier findings",
+      "report": "PDF report",
+      "reportDisabled": "Run a test first"
+    },
+    "analysis": {
+      "empty": {
+        "title": "No tests yet",
+        "description": "The first-session test program takes 30 minutes: intro, movement, strength and conditioning tests, measurements.",
+        "action": "Take test"
+      },
+      "openSession": "Test in progress · recommended next",
+      "continue": "Continue test",
+      "evaluation": "Evaluation",
+      "draftEvaluation": "Suggested evaluation",
+      "draft": "Draft",
+      "completeResult": "Complete the result",
+      "findings": "Findings",
+      "noteOf": "{{test}} note",
+      "performance": "Performance",
+      "previous": "Previous: {{value}}",
+      "measurements": "Measurements",
+      "report": "Create PDF report"
+    },
+    "history": {
+      "title": "Test sessions",
+      "empty": "No test sessions yet.",
+      "noSteps": "No steps",
+      "completed": "Completed",
+      "inProgress": "In progress",
+      "findings_one": "{{count}} finding",
+      "findings_other": "{{count}} findings",
+      "newSession": "New test session"
+    }
+  },
+  "pickAthlete": {
+    "title": "Who are you testing?",
+    "subtitle": "Tests run back to back on the athlete you choose",
+    "new": "New athlete",
+    "newHint": "Save and start testing",
+    "lastTest": "Last test {{when}}",
+    "continue": "Test in progress"
+  },
+  "assessment": {
+    "minutes": "{{from}}–{{to}} min",
+    "stages": {
+      "intro": "Intro",
+      "movement": "Movement tests",
+      "strength": "Strength tests",
+      "conditioning": "Conditioning test",
+      "measurements": "Measurements"
+    },
+    "areas": {
+      "core": "Core",
+      "glute": "Glute",
+      "upperBack": "Upper back",
+      "conditioning": "Conditioning"
+    },
+    "areasShort": {
+      "core": "Core",
+      "glute": "Glute",
+      "upperBack": "Upper back",
+      "conditioning": "Conditioning"
+    },
+    "areaHints": {
+      "core": "Trunk control, low-back stability",
+      "glute": "Hip control, knee alignment",
+      "upperBack": "Shoulder blades, posture, pulling",
+      "conditioning": "Breathing, pace, recovery"
+    },
+    "level": {
+      "none": "—",
+      "default": {
+        "weak": "Weak",
+        "medium": "Fair",
+        "good": "Good"
+      },
+      "conditioning": {
+        "weak": "Low",
+        "medium": "Fair",
+        "good": "Good"
+      }
+    },
+    "priorities": {
+      "upperBody": "Upper body",
+      "core": "Core",
+      "glute": "Glutes / hips",
+      "lowerBody": "Lower body",
+      "conditioning": "Conditioning",
+      "mobility": "Mobility"
+    },
+    "goals": {
+      "fatLoss": "Fat loss",
+      "muscle": "Muscle",
+      "conditioning": "Conditioning"
+    },
+    "painRegions": {
+      "neck": "Neck",
+      "shoulder": "Shoulder",
+      "lowerBack": "Lower back",
+      "hip": "Hip",
+      "knee": "Knee",
+      "ankle": "Ankle",
+      "wrist": "Wrist",
+      "other": "Other"
+    },
+    "check": {
+      "yes": "Yes",
+      "no": "No"
+    },
+    "steps": {
+      "intro": {
+        "title": "Intro",
+        "short": "Intro",
+        "target": "3 questions · 3 min",
+        "why": "Training background, pain or injury and goal. A painful area shows up as a caution in later tests; the goal sets the program direction."
+      },
+      "airSquat": {
+        "title": "Air Squat",
+        "short": "Air Squat",
+        "target": "10 reps",
+        "command": "Push your knees out, go down and up with control.",
+        "why": "Basic bodyweight squat: hip-knee alignment, ankle mobility and low-back control.",
+        "checks": {
+          "kneeValgus": "Knees cave in",
+          "heelLift": "Heels lift",
+          "lumbarCollapse": "Low back collapses"
+        },
+        "checksOk": {
+          "kneeValgus": "Good knee alignment",
+          "heelLift": "Heels stay down",
+          "lumbarCollapse": "Good low-back control"
+        }
+      },
+      "hipHinge": {
+        "title": "Hip Hinge",
+        "short": "Hip Hinge",
+        "target": "10 reps",
+        "command": "Send your hips back, bend your knees slightly.",
+        "why": "Hinging from the hips: does the movement come from the back or the hips?",
+        "checks": {
+          "backRounding": "Back rounds",
+          "hipsNotBack": "Hips don't go back (bends at the knees)"
+        },
+        "checksOk": {
+          "backRounding": "Back stays neutral",
+          "hipsNotBack": "Movement comes from the hips"
+        }
+      },
+      "overheadReach": {
+        "title": "Overhead Reach",
+        "short": "Overhead",
+        "target": "10 reps",
+        "command": "Raise your arms overhead, keep your ribs down.",
+        "why": "Reaching overhead: shoulder mobility and rib-cage / low-back control.",
+        "checks": {
+          "lumbarArch": "Low-back arch increases",
+          "shouldersForward": "Shoulders roll forward"
+        },
+        "checksOk": {
+          "lumbarArch": "Ribs down, neutral back",
+          "shouldersForward": "Shoulders open"
+        }
+      },
+      "plank": {
+        "title": "Plank",
+        "short": "Plank",
+        "target": "30 s",
+        "command": "Brace your abs, keep your back still.",
+        "why": "Trunk endurance: do the back and hips stay still for 30 seconds?",
+        "checks": {
+          "hipSag": "Low back sags",
+          "shaking": "Shaking / loss of control"
+        },
+        "checksOk": {
+          "hipSag": "Back stays still",
+          "shaking": "Good control"
+        }
+      },
+      "gobletSquat": {
+        "title": "Goblet Squat",
+        "short": "Goblet",
+        "target": "10 reps",
+        "command": "Hold the dumbbell at your chest, lower with control.",
+        "why": "Loaded squat: depth, balance and knee-hip alignment.",
+        "checks": {
+          "shallowDepth": "Not enough depth",
+          "balanceLoss": "Loses balance",
+          "kneeHipMisalign": "Knee-hip alignment off"
+        },
+        "checksOk": {
+          "shallowDepth": "Good depth",
+          "balanceLoss": "Good balance",
+          "kneeHipMisalign": "Knees and hips aligned"
+        }
+      },
+      "pushUp": {
+        "title": "Push-Up",
+        "short": "Push-Up",
+        "target": "Max reps",
+        "command": "Keep your body straight, bring your chest to the floor.",
+        "why": "Pushing strength and trunk control: how many reps, and when does form break?",
+        "checks": {
+          "hipDrop": "Hips drop",
+          "elbowControl": "No elbow control",
+          "neckPosition": "Poor neck position"
+        },
+        "checksOk": {
+          "hipDrop": "Body stays straight",
+          "elbowControl": "Good elbow control",
+          "neckPosition": "Neutral neck"
+        }
+      },
+      "dumbbellRow": {
+        "title": "Dumbbell Row",
+        "short": "Row",
+        "target": "10 reps / arm",
+        "command": "Pull your elbow toward your hip.",
+        "why": "Pulling and back activation: do the shoulders shrug, is the back working?",
+        "checks": {
+          "shoulderShrug": "Shoulder shrugs up",
+          "backInactive": "Back not engaged"
+        },
+        "checksOk": {
+          "shoulderShrug": "Shoulder stays down",
+          "backInactive": "Back engaged"
+        }
+      },
+      "conditioning": {
+        "title": "Conditioning test",
+        "short": "Conditioning",
+        "target": "A: 500 m row / ski · B: 1 min burpees",
+        "why": "Conditioning level: time or reps, breathing and pace. With a watch connected, heart rate and 60-second recovery are measured too.",
+        "checks": {
+          "heavyBreathing": "Breathing very strained",
+          "tempoDrop": "Pace drops"
+        },
+        "checksOk": {
+          "heavyBreathing": "Breathing controlled",
+          "tempoDrop": "Pace held"
+        }
+      },
+      "measurements": {
+        "title": "Measurements",
+        "short": "Measures",
+        "target": "Weight · waist · photo (front / side)",
+        "why": "Baseline measures: weight, waist and photos. Retests track change from here."
+      }
+    },
+    "conditioning": {
+      "choose": "Option",
+      "suggested": "Suggested: {{option}}",
+      "option": {
+        "row500": "500 m row / ski",
+        "burpee": "1 min burpees"
+      },
+      "command": {
+        "row500": "Finish 500 meters as fast as you can, keep the pace.",
+        "burpee": "Burpees for one minute: down, up, jump."
+      },
+      "target": {
+        "row500": "500 m · time it",
+        "burpee": "60 s · count reps"
+      }
+    },
+    "metric": {
+      "reps": "Reps",
+      "holdSeconds": "Time held",
+      "timeSeconds": "Time (min:s)",
+      "invalid": "Enter a valid number.",
+      "unit": {
+        "reps": "reps",
+        "holdSeconds": "s",
+        "timeSeconds": "min:s"
+      }
+    },
+    "timer": {
+      "countdown": "Countdown",
+      "stopwatch": "Stopwatch",
+      "start": "Start",
+      "stop": "Stop",
+      "pause": "Pause",
+      "reset": "Reset",
+      "status": {
+        "idle": "Ready",
+        "running": "Running",
+        "paused": "Paused",
+        "done": "Done"
+      }
+    },
+    "step": {
+      "command": "Cue",
+      "checks": "Check",
+      "checksHint": "Yes = finding",
+      "note": "Coach note",
+      "notePlaceholder": "e.g. lordosis appears",
+      "dictationHint": "Tap the microphone to dictate the note.",
+      "saveAndNext": "Save and continue",
+      "skip": "Skip this step"
+    },
+    "intro": {
+      "lead": "Ask the athlete and mark the answers.",
+      "experience": {
+        "question": "Have you trained before?",
+        "label": "Training background",
+        "regular": "Yes, regularly",
+        "occasional": "Now and then",
+        "none": "No",
+        "noteLabel": "Which sport, how long?",
+        "notePlaceholder": "e.g. 2 years of gym, 3 days a week"
+      },
+      "pain": {
+        "question": "Any pain or injury?",
+        "label": "Pain / injury",
+        "no": "No",
+        "yes": "Yes",
+        "none": "None",
+        "regions": "Area",
+        "noteLabel": "When, how?",
+        "notePlaceholder": "e.g. low-back pain after long sitting"
+      },
+      "goals": {
+        "question": "What's your goal?",
+        "label": "Goal"
+      },
+      "note": "Note",
+      "notePlaceholder": "Anything to add"
+    },
+    "measurements": {
+      "weight": "Weight",
+      "waist": "Waist",
+      "waistShort": "Waist",
+      "height": "Height",
+      "restingHr": "Resting heart rate",
+      "fromWatch": "From watch",
+      "photos": "Photos",
+      "photosHint": "Front and side",
+      "front": "Front",
+      "side": "Side",
+      "takePhoto": "Take",
+      "choosePhoto": "Choose",
+      "removePhoto": "Remove photo",
+      "photoPermission": "Camera permission denied. Allow it in Settings or choose from the library.",
+      "photoError": "Could not add the photo. Try again."
+    },
+    "recommend": {
+      "caution": "Pain was reported in the intro ({{regions}}) — stop the test if it hurts.",
+      "reason": {
+        "start": "First step: training background, pain and goal.",
+        "default": "Next test in the program.",
+        "hingeAfterSquatBack": "The low back collapsed in the Air Squat — in the Hip Hinge, check whether the movement comes from the back or the hips.",
+        "reachAfterHingeBack": "The back rounded in the Hip Hinge — watch rib and low-back control in the overhead reach.",
+        "plankAfterCoreFlags": "There are low-back control findings — watch trunk stability closely in the Plank.",
+        "gobletAfterKneeValgus": "Knees caved in the Air Squat — check knee-hip alignment under load in the Goblet Squat.",
+        "gobletAfterHeelLift": "Heels lifted in the Air Squat — watch depth and heels in the Goblet Squat.",
+        "pushUpAfterPlankSag": "The back sagged in the Plank — watch for hip drop in the push-up, go to the knees if needed.",
+        "rowAfterShouldersForward": "Shoulders rolled forward in the Overhead Reach — check for shrugging in the Row.",
+        "conditioningLowImpact": "Knee / back pain reported — a 500 m row is suggested instead of jumping burpees.",
+        "measurements": "Last step: weight, waist and photos.",
+        "result": "All steps done — complete the result."
+      }
+    },
+    "next": {
+      "title": "Recommended next test",
+      "allDone": "All tests done",
+      "allDoneDescription": "Rate the four areas on the result screen and choose what to improve most.",
+      "saved": "{{step}} saved",
+      "start": "Start: {{step}}",
+      "chooseOther": "Choose another test",
+      "toResult": "Go to result",
+      "option": "Suggested option: {{option}}"
+    },
+    "session": {
+      "title": "First-session test program",
+      "allSteps": "All tests",
+      "nextRecommended": "Recommended next",
+      "startHere": "Start here",
+      "start": "Start",
+      "done": "Done",
+      "skipped": "Skipped",
+      "recommended": "Recommended",
+      "flaggedLastTime": "Finding last time",
+      "faults_one": "{{count}} finding",
+      "faults_other": "{{count}} findings",
+      "clean": "Clean",
+      "painReported": "reported pain",
+      "resultTodo": "Complete the result",
+      "resultDone": "Result saved",
+      "resultHint": "Core · Glute · Upper back · Conditioning + priority",
+      "delete": "Delete session",
+      "deleteConfirm": {
+        "title": "Delete test session?",
+        "description": "All results, measurements and photos of this session will be permanently deleted."
+      }
+    },
+    "result": {
+      "title": "Result",
+      "lead": "Levels are suggested from the findings; change them if needed.",
+      "suggestion": "Suggested: {{level}} ({{faults}} findings in {{observed}} checks)",
+      "noData": "No test was run for this area.",
+      "priorityQuestion": "What do we need to improve most?",
+      "prioritySuggestion": "Suggested: {{priority}}",
+      "priority": "Priority",
+      "priorityNote": "Priority note",
+      "priorityNotePlaceholder": "e.g. upper body, then core",
+      "coachNote": "Coach note",
+      "coachNotePlaceholder": "I'll write the program around this…",
+      "save": "Save evaluation",
+      "update": "Update evaluation",
+      "doneTitle": "Evaluation saved",
+      "doneSubtitle": "{{name}}",
+      "doneDescription": "You can now create a program based on this result or share the PDF report with the athlete.",
+      "createProgram": "Create program",
+      "report": "PDF report",
+      "backToAthlete": "Back to analysis"
+    }
+  },
+  "heartRate": {
+    "connect": "Connect watch",
+    "connectHint": "Live heart rate from the athlete's watch or chest strap",
+    "disconnect": "Disconnect",
+    "unnamed": "Heart-rate device",
+    "avg": "Avg",
+    "max": "Max",
+    "maxShort": "Max heart rate",
+    "recovery": "Recovery",
+    "peakSoFar": "Peak so far: {{value}} bpm",
+    "recoveryLine": "60 s recovery: −{{value}} bpm",
+    "avgLine": "Average {{value}} bpm",
+    "context": "heart rate max {{max}}, avg {{avg}}, 60 s recovery {{recovery}} bpm",
+    "phase": {
+      "idle": "Live",
+      "recording": "Recording",
+      "recovery": "Recovery {{seconds}}",
+      "done": "Recorded"
+    },
+    "errors": {
+      "unsupported": "Bluetooth heart rate is not available on this device.",
+      "permission": "Bluetooth permission denied.",
+      "poweredOff": "Bluetooth is off. Turn it on and try again.",
+      "cancelled": "Selection cancelled.",
+      "connection": "Connection lost. Bring the watch closer and reconnect."
+    },
+    "sheet": {
+      "title": "Connect watch",
+      "subtitle": "Watch or chest strap broadcasting heart rate",
+      "scan": "Scan",
+      "scanning": "Scanning…",
+      "tapToConnect": "Tap to connect",
+      "demo": "Demo heart rate",
+      "demoHint": "Try without a device (development only)",
+      "unsupported": "This device has no Bluetooth heart-rate support. On the web, use Chrome or Edge.",
+      "help": "Turn on heart-rate broadcast on the watch (Garmin: \"Broadcast heart rate\", Polar: \"HR sensor mode\"). Apple Watch needs a broadcast app."
+    }
+  },
+  "dictation": {
+    "start": "Dictate",
+    "stop": "Stop listening",
+    "listening": "Listening…",
+    "errors": {
+      "unavailable": "Speech recognition is not available on this device.",
+      "permission": "Microphone / speech recognition permission denied.",
+      "noSpeech": "No speech detected. Try again.",
+      "failed": "Listening stopped. Try again."
+    }
+  },
+  "exercises": {
+    "title": "Exercises",
+    "subtitle": "{{count}} exercises · {{videos}} with video",
+    "search": "Search exercises",
+    "all": "All",
+    "videoOnly": "With video",
+    "notFound": "Exercise not found.",
+    "empty": {
+      "title": "No exercises found",
+      "description": "Change the search or the filters.",
+      "action": "Clear filters"
+    },
+    "categories": {
+      "lowerBody": "Lower body",
+      "upperBody": "Upper body",
+      "core": "Core",
+      "conditioning": "Conditioning",
+      "mobility": "Mobility"
+    },
+    "difficulty": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard"
+    },
+    "regions": {
+      "chest": "Chest",
+      "back": "Back",
+      "shoulders": "Shoulders",
+      "biceps": "Biceps",
+      "triceps": "Triceps",
+      "core": "Abs / core",
+      "obliques": "Obliques",
+      "lowerBack": "Lower back",
+      "glutes": "Glutes",
+      "quads": "Quads",
+      "hamstrings": "Hamstrings",
+      "adductors": "Adductors",
+      "calves": "Calves",
+      "hips": "Hip joint",
+      "thoracic": "Thoracic spine",
+      "fullBody": "Full body",
+      "cardio": "Conditioning"
+    },
+    "equipment": {
+      "bodyweight": "Bodyweight",
+      "dumbbell": "Dumbbell",
+      "kettlebell": "Kettlebell",
+      "barbell": "Barbell",
+      "band": "Resistance band",
+      "bench": "Bench",
+      "box": "Step / box",
+      "mat": "Mat",
+      "foamRoller": "Foam roller",
+      "medBall": "Medicine ball",
+      "machine": "Rower / ski erg",
+      "pullUpBar": "Pull-up bar"
+    },
+    "media": {
+      "play": "Play video",
+      "tapToPlay": "Tap to play",
+      "noVideo": "No video for this exercise — short intro below.",
+      "videoError": "Video could not be loaded.",
+      "difficulty": "Difficulty",
+      "regions": "Regions worked",
+      "equipment": "Equipment"
+    },
+    "items": {
+      "AIR_SQUAT": {
+        "name": "Air Squat",
+        "description": "Feet shoulder-width; sit the hips back and down, knees tracking over the toes, drive up through the heels."
+      },
+      "SQUAT": {
+        "name": "Squat",
+        "description": "Basic squat: chest up, neutral spine, lower until the thighs approach parallel, then stand."
+      },
+      "SUMO_SQUAT": {
+        "name": "Sumo Squat",
+        "description": "Wide stance, toes out; push the knees out and lower with an upright torso. Targets inner thighs and glutes."
+      },
+      "GOBLET_SQUAT": {
+        "name": "Goblet Squat",
+        "description": "Hold a dumbbell or kettlebell vertically at the chest; lower under control until the elbows pass inside the knees, drive up through the heels."
+      },
+      "FRONT_SQUAT_WITH_DUMBBELL": {
+        "name": "Front Squat with Dumbbell",
+        "description": "Dumbbells racked on the shoulders; squat with an upright torso. Demands quads and trunk control."
+      },
+      "BACK_SQUAT_WITH_BAR": {
+        "name": "Back Squat with Bar",
+        "description": "Bar on the upper back; brace, lower under control and drive up. For experienced lifters."
+      },
+      "BULGARIAN_SPLIT_SQUAT": {
+        "name": "Bulgarian Split Squat",
+        "description": "Rear foot on a bench; lower vertically keeping the front knee over the toes. Single-leg strength and balance."
+      },
+      "BACK_LUNGE": {
+        "name": "Back Lunge",
+        "description": "Step back, lower until both knees are at 90°, push through the front heel to return. Knee-friendly."
+      },
+      "FORWARD_LUNGE": {
+        "name": "Forward Lunge",
+        "description": "Step forward, torso upright, lower without the front knee drifting past the toes, and return."
+      },
+      "LATERAL_LUNGE": {
+        "name": "Lateral Lunge",
+        "description": "Big step to the side; bend one leg while the other stays straight, hips back."
+      },
+      "WALKING_LUNGE_WITH_MED_BALL": {
+        "name": "Walking Lunge with Med Ball",
+        "description": "Walking lunges holding a med ball at the chest, step after step."
+      },
+      "STEP_UP": {
+        "name": "Step-Up",
+        "description": "Place one foot on the box, drive through that heel to step up, lower under control. Knee-friendly single-leg strength."
+      },
+      "SINGLE_LEG_SQUAT_WITH_STEP": {
+        "name": "Single Leg Squat with Step",
+        "description": "Controlled single-leg squat off a step, free leg hanging. Advanced."
+      },
+      "HIP_HINGE_DRILL": {
+        "name": "Hip Hinge Drill (Dowel)",
+        "description": "Hold a dowel along the spine (head, upper back and tailbone touching); soften the knees, push the hips back and return without losing contact."
+      },
+      "GOOD_MORNING": {
+        "name": "Good Morning",
+        "description": "Hands behind the head; flat back, hinge forward from the hips until the hamstrings stretch, then return."
+      },
+      "DUMBBELL_ROMANIAN_DEADLIFT": {
+        "name": "Dumbbell Romanian Deadlift",
+        "description": "Dumbbells in front of the thighs; soft knees, push the hips back and lower the weights to mid-shin."
+      },
+      "SINGLE_ARM_KETTLEBELL_DEADLIFT": {
+        "name": "Single Arm Kettlebell Deadlift",
+        "description": "Kettlebell in one hand; hinge and stand without twisting. Hip and trunk stability."
+      },
+      "DEADLIFT_WITH_BAR": {
+        "name": "Deadlift with Bar",
+        "description": "Bar over mid-foot; neutral back, push the floor away and keep the bar close. For experienced lifters."
+      },
+      "HIP_BRIDGE": {
+        "name": "Hip Bridge",
+        "description": "Lying on your back, knees bent; squeeze the glutes and lift until shoulders, hips and knees line up."
+      },
+      "HIP_THRUST_WITH_BENCH": {
+        "name": "Hip Thrust with Bench",
+        "description": "Upper back on a bench; drive the hips up and squeeze for a second at the top. Strong glute work."
+      },
+      "HIP_THRUST_WITH_BAR": {
+        "name": "Hip Thrust with Bar",
+        "description": "Barbell across the hips, back on a bench; loaded hip thrust."
+      },
+      "CALF_RAISES": {
+        "name": "Calf Raises",
+        "description": "Rise onto the toes, pause at the top, lower slowly."
+      },
+      "WALL_SIT": {
+        "name": "Wall Sit",
+        "description": "Back against the wall, knees at 90°; hold the position."
+      },
+      "CLAMSHELL_WITH_MINIBAND": {
+        "name": "Clamshell with Miniband",
+        "description": "Side-lying with a mini band at the knees; keep the heels together and open the top knee."
+      },
+      "SIDE_WALK_WITH_BAND": {
+        "name": "Side Walk with Band",
+        "description": "Band at the knees or ankles; step sideways in a half squat."
+      },
+      "DONKEY_KICKS": {
+        "name": "Donkey Kicks",
+        "description": "On all fours; drive the bent leg up toward the ceiling without arching the back."
+      },
+      "WALL_PUSH_UP": {
+        "name": "Wall Push Up",
+        "description": "Hands on the wall; body straight, bring the chest to the wall. The easiest push-up."
+      },
+      "INCLINE_PUSH_UP": {
+        "name": "Incline Push-Up",
+        "description": "Hands on a bench or box; body straight, lower the chest to the edge. A step toward full push-ups."
+      },
+      "NEGATIVE_PUSH_UP": {
+        "name": "Negative Push-Up",
+        "description": "From the top of a push-up, lower slowly over 3–5 seconds; return from the knees."
+      },
+      "PUSH_UP": {
+        "name": "Push-Up",
+        "description": "Hands under the shoulders, body straight head to heels; lower the chest and press up."
+      },
+      "PIKE_PUSH_UP": {
+        "name": "Pike Push-Up",
+        "description": "Hips high in an inverted V; lower the head between the hands. Shoulder-focused press."
+      },
+      "DUMBBELL_CHEST_PRESS_WITH_BENCH": {
+        "name": "Dumbbell Chest Press with Bench",
+        "description": "Lying on a bench; press the dumbbells up from chest level and lower under control."
+      },
+      "BENCH_PRESS_WITH_BAR": {
+        "name": "Bench Press with Bar",
+        "description": "Barbell chest press with shoulder blades set on the bench. Use a spotter."
+      },
+      "DUMBBELL_BENT_OVER_ROW": {
+        "name": "Dumbbell Bent Over Row",
+        "description": "Hinge forward with a flat back; row the dumbbells by driving the elbows toward the hips."
+      },
+      "KETTLEBELL_SEESAW_ROW": {
+        "name": "Kettlebell Seesaw Row",
+        "description": "Alternating rows with two kettlebells in a hinged position."
+      },
+      "RENEGADE_ROW_WITH_DUMBBELL": {
+        "name": "Renegade Row with Dumbbell",
+        "description": "Plank on dumbbells; alternate rows without rotating the hips. Advanced."
+      },
+      "SEATED_90_ROW_WITH_BAND": {
+        "name": "Seated 90° Row with Band",
+        "description": "Seated band row; draw the shoulder blades back and down."
+      },
+      "BANDED_LAT_PULLDOWN": {
+        "name": "Banded Lat Pulldown",
+        "description": "Pull the band down toward the chest, elbows driving down to the sides."
+      },
+      "BAND_ASSISTED_PULL_UP": {
+        "name": "Band-Assisted Pull-Up",
+        "description": "Band looped on the bar under a foot or knee; pull the chest toward the bar."
+      },
+      "DEAD_HANG": {
+        "name": "Dead Hang",
+        "description": "Hang from the bar with shoulders gently engaged. Grip and shoulder health."
+      },
+      "BAND_PULL_APART": {
+        "name": "Band Pull Apart",
+        "description": "Pull the band apart at chest height, squeezing the shoulder blades together."
+      },
+      "REVERSE_FLY": {
+        "name": "Reverse Fly",
+        "description": "Hinged forward; raise light dumbbells out to the sides. Rear delts and upper back."
+      },
+      "WALL_ANGEL": {
+        "name": "Wall Angel",
+        "description": "Back and arms against the wall; slide the arms up and down without losing contact. For posture."
+      },
+      "SHOULDER_PRESS": {
+        "name": "Shoulder Press",
+        "description": "Press the dumbbells overhead from the shoulders; ribs down, no arching."
+      },
+      "SHOULDER_LATERAL_RAISE_WITH_DUMBBELL": {
+        "name": "Shoulder Lateral Raise with Dumbbell",
+        "description": "Raise the dumbbells out to shoulder height and lower slowly."
+      },
+      "BICEPS_CURL": {
+        "name": "Biceps Curl",
+        "description": "Elbows pinned to the sides; curl the dumbbells toward the shoulders."
+      },
+      "TRICEPS_DIPS": {
+        "name": "Triceps Dips",
+        "description": "Hands on a bench behind you; bend the elbows back to lower, then press up."
+      },
+      "SINGLE_ARM_DUMBBELL_OVERHEAD_TRICEP_EXTENSION": {
+        "name": "Single Arm Dumbbell Overhead Tricep Extension",
+        "description": "Dumbbell overhead; keep the elbow still, lower behind the head and extend."
+      },
+      "PLANK": {
+        "name": "Plank",
+        "description": "Forearms down, body straight head to heels; brace the abs, don't let the hips sag."
+      },
+      "SIDE_PLANK": {
+        "name": "Side Plank",
+        "description": "Prop up on one forearm; hold a straight line without the hips dropping."
+      },
+      "CONTRALATERAL_DEADBUG_ONE_SIDE": {
+        "name": "Contralateral Deadbug One Side",
+        "description": "On your back, arms and knees up; press the low back down and extend the opposite arm and leg."
+      },
+      "BIRD_DOG": {
+        "name": "Bird Dog",
+        "description": "On all fours; reach the opposite arm and leg, keeping the back and hips still."
+      },
+      "CRUNCH": {
+        "name": "Crunch",
+        "description": "On your back, knees bent; lift the shoulders and squeeze the abs."
+      },
+      "SUPERMAN": {
+        "name": "Superman",
+        "description": "Face down; lift arms and legs together slightly and hold briefly."
+      },
+      "REVERSE_CRUNCH": {
+        "name": "Reverse Crunch",
+        "description": "On your back; curl the knees to the chest and lift the hips off the floor."
+      },
+      "BICYCLE": {
+        "name": "Bicycle",
+        "description": "On your back; bring elbow to opposite knee, alternating like pedaling."
+      },
+      "RUSSIAN_TWIST": {
+        "name": "Russian Twist",
+        "description": "Sit and lean back slightly; rotate the torso side to side."
+      },
+      "MOUNTAIN_CLIMBER": {
+        "name": "Mountain Climber",
+        "description": "From a push-up position, drive the knees to the chest quickly, alternating."
+      },
+      "SHOULDER_TAPS": {
+        "name": "Shoulder Taps",
+        "description": "In a high plank, tap the opposite shoulder without rocking the hips."
+      },
+      "STAND_WOODCHOP": {
+        "name": "Standing Woodchop",
+        "description": "Pull the band diagonally high to low, rotating through the torso, not the arms."
+      },
+      "FARMER_CARRY": {
+        "name": "Farmer's Carry",
+        "description": "Weights in both hands; walk tall with shoulders down and short steps."
+      },
+      "OVERHEAD_CARRY_DUMBBELL_WALKING": {
+        "name": "Overhead Carry Dumbbell Walking",
+        "description": "Dumbbell locked out overhead; walk with ribs down."
+      },
+      "BEAR_CRAWL": {
+        "name": "Bear Crawl",
+        "description": "On all fours with knees just off the floor; crawl moving opposite hand and foot."
+      },
+      "HOLLOW_BODY_HOLD": {
+        "name": "Hollow Body Hold",
+        "description": "On your back; low back glued down, arms and legs extended and lifted. Hard."
+      },
+      "LYING_DOUBLE_LEG_RAISE": {
+        "name": "Lying Double Leg Raise",
+        "description": "On your back; raise and lower both legs without the low back lifting."
+      },
+      "PLANK_TO_PUSH_UP": {
+        "name": "Plank to Push-Up",
+        "description": "Move from forearm plank to hands one arm at a time and back."
+      },
+      "PLANK_DUMBBELL_PULL_THROUGH": {
+        "name": "Plank Dumbbell Pull Through",
+        "description": "In a high plank, drag a dumbbell under the body side to side; hips still."
+      },
+      "TURKISH_GET_UP_WITH_DUMBBELL": {
+        "name": "Turkish Get Up with Dumbbell",
+        "description": "From lying to standing with the dumbbell held overhead throughout. Full-body control."
+      },
+      "JUMPING_JACK": {
+        "name": "Jumping Jack",
+        "description": "Jump while opening and closing arms and legs together."
+      },
+      "HIGH_KNEE_RUN": {
+        "name": "High Knee Run",
+        "description": "Run in place driving the knees to hip height, arms pumping."
+      },
+      "ROW_ERG": {
+        "name": "Rowing Ergometer",
+        "description": "Legs drive, then torso, then arms; reverse on the return. The tool of the 500 m test."
+      },
+      "SKI_ERG": {
+        "name": "Ski Erg",
+        "description": "Pull the handles down while hinging at the hips; rhythmic, powerful strokes."
+      },
+      "BURPEE_WITHOUT_PUSH_UP": {
+        "name": "Burpee (No Push-Up)",
+        "description": "Squat, hands down, jump the feet back, bring them in and jump — no push-up."
+      },
+      "JUMPING_SQUAT": {
+        "name": "Jumping Squat",
+        "description": "Explode up from a squat, land softly and repeat."
+      },
+      "KETTLEBELL_SWING": {
+        "name": "Kettlebell Swing",
+        "description": "Hinge and snap the hips to swing the kettlebell to chest height; don't lift with the arms."
+      },
+      "FRONT_SQUAT_TO_SHOULDER_PRESS": {
+        "name": "Front Squat to Shoulder Press",
+        "description": "Squat with dumbbells on the shoulders and press overhead as you stand (thruster)."
+      },
+      "BURPEE": {
+        "name": "Burpee",
+        "description": "Squat, hands down, jump back, chest to the floor, jump in and leap up. The 1-minute test movement."
+      },
+      "JUMP_LUNGE": {
+        "name": "Jump Lunge",
+        "description": "Jump and switch legs in a lunge; land softly."
+      },
+      "DUMBBELL_HANG_POWER_CLEAN_AND_PUSH_PRESS": {
+        "name": "Dumbbell Hang Power Clean and Push Press",
+        "description": "Pull the dumbbells explosively from the thighs to the shoulders, then push-press overhead."
+      },
+      "ARM_CIRCLE": {
+        "name": "Arm Circle",
+        "description": "Arms out; draw small to large circles forward and backward."
+      },
+      "OVERHEAD_REACH": {
+        "name": "Overhead Reach",
+        "description": "Raise the arms forward and overhead; keep the ribs down without arching the back."
+      },
+      "CAT_CAMEL": {
+        "name": "Cat Camel",
+        "description": "On all fours; slowly round and arch the back."
+      },
+      "OPEN_BOOK": {
+        "name": "Open Book",
+        "description": "Side-lying, knees bent; open the top arm behind you like a book, eyes following the hand."
+      },
+      "QUADRUPED_THORACIC_ROTATION": {
+        "name": "Quadruped Thoracic Rotation",
+        "description": "On all fours, one hand behind the head; rotate the elbow toward the ceiling."
+      },
+      "THORACIC_EXTENSION_FOAM_ROLLER": {
+        "name": "Thoracic Extension (Foam Roller)",
+        "description": "Foam roller under the upper back; support the head and extend back over it."
+      },
+      "INCH_WORM": {
+        "name": "Inch Worm",
+        "description": "Fold forward, walk the hands out to a plank, walk back and stand."
+      },
+      "HAMSTRING_FLOW": {
+        "name": "Hamstring Flow",
+        "description": "Hinge to dynamically stretch the hamstrings."
+      },
+      "HIP_FLEXOR_STRETCH": {
+        "name": "Hip Flexor Stretch",
+        "description": "Half-kneeling; squeeze the glute and shift forward to stretch the front of the hip."
+      },
+      "HIP_90_90_FORWARD_REACHING": {
+        "name": "Hip 90/90 Forward Reaching",
+        "description": "Sit in 90/90 and reach forward with a tall torso."
+      },
+      "WORLD_GREATEST_STRETCH": {
+        "name": "World's Greatest Stretch",
+        "description": "From a lunge, hands down, drop the elbow inside the foot, then rotate the arm to the ceiling."
+      },
+      "CHILD_POSE_STRETCH": {
+        "name": "Child Pose Stretch",
+        "description": "Kneel, sit the hips to the heels, reach the arms forward and breathe."
+      },
+      "DOWNWARD_TO_COBRA": {
+        "name": "Downward to Cobra",
+        "description": "Flow from downward dog to cobra; spine and hamstring mobility."
+      },
+      "PIGEON_HIP_ROTATOR_STRETCH": {
+        "name": "Pigeon Hip Rotator Stretch",
+        "description": "Pigeon pose to stretch the deep hip rotators of the front leg."
+      }
+    }
+  },
+  "tests": {
+    "title": "Tests",
+    "movement": "Movement",
+    "protocol": {
+      "duration": "30 minutes · 10 steps",
+      "title": "First-session test program",
+      "description": "Intro, movement, strength and conditioning tests, measurements; then a rating of four areas and the main thing to improve. After each step the next test is recommended.",
+      "start": "Start with an athlete"
+    },
+    "resultDescription": "Core · Glute · Upper back · Conditioning: weak / fair / good (conditioning: low / fair / good). The app suggests from the findings; the coach decides. Then the main thing to improve is chosen and the program is written around it."
+  },
+  "programs": {
+    "tab": {
+      "createTitle": "Program assistant",
+      "createDescription": "Get a program based on the evaluation, in the variation you want — by typing or speaking.",
+      "create": "Create program",
+      "saved": "Saved programs",
+      "empty": "No programs yet.",
+      "meta_one": "{{days}} days/week · {{weeks}} weeks · {{count}} exercise · {{date}}",
+      "meta_other": "{{days}} days/week · {{weeks}} weeks · {{count}} exercises · {{date}}"
+    },
+    "chat": {
+      "title": "Program assistant",
+      "basedOn": "{{date}} evaluation",
+      "noAssessment": "No evaluation",
+      "intro": "Type the program you want, or tap the microphone and say it. The evaluation summary and the variation above are added automatically.",
+      "placeholder": "e.g. 3 days a week, upper-body focus, easy on the knees",
+      "send": "Send",
+      "thinking": "Writing the program…",
+      "dictationHint": "Tap the microphone and speak; the message sends when you stop.",
+      "suggestions": {
+        "fromAssessment": "Write a program from the evaluation",
+        "home": "Home version, no equipment",
+        "upperBody": "Focus on the upper body",
+        "short": "Short 30-minute sessions"
+      }
+    },
+    "preferences": {
+      "title": "Variation",
+      "short": "{{days}} days · {{minutes}} min · {{weeks}} weeks · {{place}}",
+      "days": "Per week",
+      "daysOption_one": "{{count}} day",
+      "daysOption_other": "{{count}} days",
+      "minutes": "Session length",
+      "minutesOption_one": "{{count}} min",
+      "minutesOption_other": "{{count}} min",
+      "weeks": "Duration",
+      "weeksOption_one": "{{count}} week",
+      "weeksOption_other": "{{count}} weeks",
+      "placeLabel": "Place",
+      "place": {
+        "gym": "Gym",
+        "home": "Home",
+        "outdoor": "Outdoors"
+      },
+      "equipment": "Equipment",
+      "summary": "{{days}} days a week, {{minutes}}-minute sessions, {{weeks}} weeks, place: {{place}}, equipment: {{equipment}}."
+    },
+    "preview": {
+      "meta_one": "{{days}} days/week · {{minutes}} min · {{weeks}} weeks · {{count}} exercise",
+      "meta_other": "{{days}} days/week · {{minutes}} min · {{weeks}} weeks · {{count}} exercises",
+      "day": "Day {{number}}",
+      "open": "Open",
+      "save": "Save",
+      "saved": "Saved"
+    },
+    "view": {
+      "meta_one": "{{days}} days/week · {{minutes}} min · {{weeks}} weeks · {{count}} exercise",
+      "meta_other": "{{days}} days/week · {{minutes}} min · {{weeks}} weeks · {{count}} exercises",
+      "sharePdf": "Share PDF",
+      "editInChat": "Edit in chat",
+      "rest": "Rest {{seconds}} s",
+      "notInCatalog": "This exercise is not in the catalog; the intro was written by the program assistant.",
+      "delete": "Delete program",
+      "deleteConfirm": {
+        "title": "Delete program?",
+        "description": "\"{{title}}\" will be permanently deleted."
+      },
+      "footnote": "Suggested by the program assistant; review before giving it to the athlete."
+    },
+    "sections": {
+      "warmup": "Warm-up",
+      "main": "Main",
+      "conditioning": "Conditioning",
+      "cooldown": "Cool-down"
+    },
+    "context": {
+      "client": "Client",
+      "noAssessment": "No evaluation yet; write a general starter program.",
+      "noFaults": "no findings",
+      "coachNote": "coach note",
+      "cleanMovement": "No findings in the movement tests."
+    },
+    "errors": {
+      "not_configured": "The program assistant is not configured on the server (ANTHROPIC_API_KEY missing).",
+      "bad_request": "The request could not be read. Refresh the chat and try again.",
+      "refusal": "A program could not be written for this request. Phrase it differently.",
+      "truncated": "The reply was cut off. Ask for a shorter program.",
+      "invalid_output": "The reply could not be read. Try again.",
+      "rate_limited": "Too many requests. Wait a moment and try again.",
+      "upstream": "Could not reach the program assistant. Try again.",
+      "network": "No connection. Check your internet connection.",
+      "save": "The program could not be saved."
+    }
+  },
+  "report": {
+    "title": "Analysis report",
+    "badge": "Analysis",
+    "date": "Date: {{date}}",
+    "coach": "Coach: {{name}}",
+    "completedSteps": "{{done}}/{{total}} steps",
+    "summary": "Your evaluation summary",
+    "priority": "What we'll improve most",
+    "noEvaluation": "The evaluation is not complete yet.",
+    "intro": {
+      "experience": "Your training background",
+      "pain": "Pain / injury",
+      "goals": "Your goal"
+    },
+    "columns": {
+      "test": "Test",
+      "result": "Result",
+      "observations": "Observations"
+    },
+    "skipped": "Skipped",
+    "notDone": "Not done",
+    "noChecks": "No observations marked",
+    "heartRate": "Heart rate: max {{max}} · avg {{avg}} · 60 s recovery {{recovery}} bpm",
+    "coachNote": "Your coach's note",
+    "footer": "This report was prepared by {{coach}} with DeepTrainer. Ask your coach if you have questions.",
+    "yourCoach": "your coach",
+    "fileSuffix": "analysis",
+    "shareTitle": "Share report",
+    "program": {
+      "title": "Your training program",
+      "badge": "Program",
+      "day": "Day {{number}}",
+      "exercise": "Exercise",
+      "dose": "Sets × reps",
+      "rest": "Rest",
+      "restValue": "{{seconds}} s",
+      "frequency": "Frequency",
+      "length": "Session",
+      "duration": "Duration",
+      "perWeek_one": "{{count}} day a week",
+      "perWeek_other": "{{count}} days a week",
+      "minutes_one": "{{count}} min",
+      "minutes_other": "{{count}} min",
+      "weeks_one": "{{count}} week",
+      "weeks_other": "{{count}} weeks",
+      "progression": "Progression",
+      "cautions": "Cautions",
+      "fileSuffix": "program"
+    },
+    "sheet": {
+      "title": "PDF report",
+      "session": "{{date}} test session",
+      "description": "The report is written for the athlete to read; send it via WhatsApp, email or Files from the share sheet.",
+      "photos": "Include photos",
+      "photosHint": "Front / side measurement photos",
+      "noPhotos": "No photos in this session",
+      "program": "Include latest program",
+      "noProgram": "No saved program",
+      "create": "Create and share PDF",
+      "error": "The PDF could not be created. Try again."
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "version": "DeepTrainer {{version}}",
+    "coach": {
+      "title": "Coach",
+      "name": "Your name",
+      "namePlaceholder": "e.g. Kamil Atik",
+      "organization": "Gym / club",
+      "organizationPlaceholder": "e.g. DeepSport Studio",
+      "hint": "Shown in the header of PDF reports."
+    },
+    "watch": {
+      "title": "Watch",
+      "connect": "Connect watch",
+      "connected": "Connected · tap to disconnect",
+      "hint": "Live heart rate and recovery in the conditioning test",
+      "footer": "Standard Bluetooth heart-rate broadcast: Garmin, Polar, Coros, Suunto, Wahoo watches and chest straps."
+    },
+    "theme": {
+      "title": "Theme",
+      "system": "System",
+      "light": "Light",
+      "dark": "Dark",
+      "navy": "Dark navy"
+    },
+    "data": {
+      "title": "Data",
+      "footer": "Data is stored on this device.",
+      "demo": "Add sample athletes",
+      "demoHint": "İrem, Yunus, Deniz (development)",
+      "clear": "Delete all data",
+      "clearConfirm": {
+        "title": "Delete all data?",
+        "description": "Athletes, tests and programs will be permanently deleted from this device."
+      }
+    }
+  }
+}

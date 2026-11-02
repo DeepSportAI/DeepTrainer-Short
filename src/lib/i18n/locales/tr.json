@@ -1,0 +1,1292 @@
+{
+  "common": {
+    "back": "Geri",
+    "cancel": "Vazgeç",
+    "close": "Kapat",
+    "save": "Kaydet",
+    "retry": "Tekrar dene",
+    "optional": "isteğe bağlı",
+    "bmi": "VKİ",
+    "months": [
+      "Oca",
+      "Şub",
+      "Mar",
+      "Nis",
+      "May",
+      "Haz",
+      "Tem",
+      "Ağu",
+      "Eyl",
+      "Eki",
+      "Kas",
+      "Ara"
+    ],
+    "monthsLong": [
+      "Ocak",
+      "Şubat",
+      "Mart",
+      "Nisan",
+      "Mayıs",
+      "Haziran",
+      "Temmuz",
+      "Ağustos",
+      "Eylül",
+      "Ekim",
+      "Kasım",
+      "Aralık"
+    ],
+    "weekdaysShort": [
+      "Paz",
+      "Pzt",
+      "Sal",
+      "Çar",
+      "Per",
+      "Cum",
+      "Cmt"
+    ],
+    "weekdaysLong": [
+      "Pazar",
+      "Pazartesi",
+      "Salı",
+      "Çarşamba",
+      "Perşembe",
+      "Cuma",
+      "Cumartesi"
+    ]
+  },
+  "nav": {
+    "athletes": "Sporcular",
+    "tests": "Testler",
+    "startTest": "Test al",
+    "exercises": "Hareketler",
+    "settings": "Ayarlar"
+  },
+  "units": {
+    "kg": "kg",
+    "cm": "cm",
+    "m": "m",
+    "seconds": "sn",
+    "minutes": "dk",
+    "bpm": "bpm",
+    "reps": "tekrar",
+    "degrees": "°",
+    "percent": "%",
+    "metersPerSecond": "m/sn"
+  },
+  "time": {
+    "ago": {
+      "today": "bugün",
+      "yesterday": "dün",
+      "days_one": "{{count}} gün önce",
+      "days_other": "{{count}} gün önce",
+      "weeks_one": "{{count}} hafta önce",
+      "weeks_other": "{{count}} hafta önce",
+      "months_one": "{{count}} ay önce",
+      "months_other": "{{count}} ay önce"
+    }
+  },
+  "athletes": {
+    "title": "Sporcular",
+    "add": "Sporcu ekle",
+    "search": "Sporcu ara",
+    "clearSearch": "Aramayı temizle",
+    "stats": {
+      "athletes": "Sporcu",
+      "thisWeek": "Bu hafta test",
+      "inProgress": "Süren test"
+    },
+    "filters": {
+      "all": "Tümü",
+      "inProgress": "Devam eden",
+      "noTest": "Test yok",
+      "evaluated": "Değerlendirildi"
+    },
+    "card": {
+      "age": "{{age}} yaş",
+      "lastTest": "Son test",
+      "noTest": "Henüz test yok",
+      "tests": "Testler",
+      "stepsLabel": "Yapılan testler",
+      "openHint": "Analiz sayfasını açar",
+      "continue": "Teste devam et",
+      "nextLabel": "Sıradaki önerilen test",
+      "programs_one": "{{count}} program",
+      "programs_other": "{{count}} program"
+    },
+    "empty": {
+      "first": {
+        "title": "İlk sporcunuzu ekleyin",
+        "description": "Sporcuyu kaydedin, ilk ders test programını uygulayın, PDF raporunu paylaşın.",
+        "action": "Sporcu ekle"
+      },
+      "filtered": {
+        "title": "Bu süzgeçte sporcu yok",
+        "description": "Aramayı ya da süzgeci değiştirin.",
+        "action": "Süzgeci temizle"
+      }
+    }
+  },
+  "athleteForm": {
+    "newTitle": "Yeni sporcu",
+    "newSubtitle": "Testler bu kişiye yapılacak",
+    "editTitle": "Bilgileri düzenle",
+    "firstName": "Ad",
+    "lastName": "Soyad",
+    "genderLabel": "Cinsiyet",
+    "gender": {
+      "female": "Kadın",
+      "male": "Erkek"
+    },
+    "birthYear": "Doğum yılı",
+    "height": "Boy (cm)",
+    "weight": "Kilo (kg)",
+    "phone": "Telefon",
+    "email": "E-posta",
+    "note": "Not",
+    "notePlaceholder": "Örn. ofis çalışanı, haftada 2 gün gelebilir",
+    "create": "Kaydet ve devam",
+    "delete": "Sporcuyu sil",
+    "deleteConfirm": {
+      "title": "Sporcu silinsin mi?",
+      "description": "{{name}} ve bütün testleri, programları bu cihazdan kalıcı olarak silinir."
+    },
+    "errors": {
+      "firstName": "Ad gerekli.",
+      "lastName": "Soyad gerekli.",
+      "birthYear": "Dört haneli yıl girin (ör. 1995).",
+      "range": "Geçerli bir değer girin.",
+      "email": "Geçerli bir e-posta girin.",
+      "save": "Kaydedilemedi. Tekrar deneyin."
+    }
+  },
+  "athleteDetail": {
+    "more": "Diğer işlemler",
+    "notFound": "Sporcu bulunamadı.",
+    "takeTest": "Test al",
+    "continueTest": "Teste devam et",
+    "createProgram": "Program oluştur",
+    "stats": {
+      "tests": "Test",
+      "lastTest": "Son test",
+      "waist": "Bel"
+    },
+    "tabs": {
+      "analysis": "Analiz",
+      "history": "Geçmiş",
+      "programs": "Programlar"
+    },
+    "menu": {
+      "edit": "Bilgileri düzenle",
+      "newSession": "Yeni test oturumu",
+      "newSessionHint": "Yeniden test: önceki bulgularla karşılaştırılır",
+      "report": "PDF raporu",
+      "reportDisabled": "Önce bir test yapın"
+    },
+    "analysis": {
+      "empty": {
+        "title": "Henüz test yok",
+        "description": "İlk ders test programı 30 dakika sürer: tanışma, hareket, kuvvet ve kondisyon testleri, ölçüm.",
+        "action": "Test al"
+      },
+      "openSession": "Süren test · sıradaki önerilen",
+      "continue": "Teste devam et",
+      "evaluation": "Değerlendirme",
+      "draftEvaluation": "Önerilen değerlendirme",
+      "draft": "Taslak",
+      "completeResult": "Sonucu tamamla",
+      "findings": "Bulgular",
+      "noteOf": "{{test}} notu",
+      "performance": "Performans",
+      "previous": "Önceki: {{value}}",
+      "measurements": "Ölçümler",
+      "report": "PDF raporu oluştur"
+    },
+    "history": {
+      "title": "Test oturumları",
+      "empty": "Henüz test oturumu yok.",
+      "noSteps": "Adım yok",
+      "completed": "Tamamlandı",
+      "inProgress": "Sürüyor",
+      "findings_one": "{{count}} bulgu",
+      "findings_other": "{{count}} bulgu",
+      "newSession": "Yeni test oturumu"
+    }
+  },
+  "pickAthlete": {
+    "title": "Kimi test edeceksiniz?",
+    "subtitle": "Testler seçtiğiniz sporcuya art arda yapılır",
+    "new": "Yeni sporcu",
+    "newHint": "Kaydedip teste başlayın",
+    "lastTest": "Son test {{when}}",
+    "continue": "Devam eden test"
+  },
+  "assessment": {
+    "minutes": "{{from}}–{{to}} dk",
+    "stages": {
+      "intro": "Tanışma",
+      "movement": "Hareket testleri",
+      "strength": "Kuvvet testleri",
+      "conditioning": "Kondisyon testi",
+      "measurements": "Ölçüm"
+    },
+    "areas": {
+      "core": "Core",
+      "glute": "Glute (kalça)",
+      "upperBack": "Upper back (sırt)",
+      "conditioning": "Kondisyon"
+    },
+    "areasShort": {
+      "core": "Core",
+      "glute": "Glute",
+      "upperBack": "Sırt",
+      "conditioning": "Kondisyon"
+    },
+    "areaHints": {
+      "core": "Gövde kontrolü, bel stabilitesi",
+      "glute": "Kalça kontrolü, diz hizası",
+      "upperBack": "Kürek kemiği, duruş, çekiş",
+      "conditioning": "Nefes, tempo, toparlanma"
+    },
+    "level": {
+      "none": "—",
+      "default": {
+        "weak": "Zayıf",
+        "medium": "Orta",
+        "good": "İyi"
+      },
+      "conditioning": {
+        "weak": "Düşük",
+        "medium": "Orta",
+        "good": "İyi"
+      }
+    },
+    "priorities": {
+      "upperBody": "Üst vücut",
+      "core": "Core",
+      "glute": "Glute / kalça",
+      "lowerBody": "Alt vücut",
+      "conditioning": "Kondisyon",
+      "mobility": "Mobilite"
+    },
+    "goals": {
+      "fatLoss": "Yağ yakımı",
+      "muscle": "Kas",
+      "conditioning": "Kondisyon"
+    },
+    "painRegions": {
+      "neck": "Boyun",
+      "shoulder": "Omuz",
+      "lowerBack": "Bel",
+      "hip": "Kalça",
+      "knee": "Diz",
+      "ankle": "Ayak bileği",
+      "wrist": "El bileği",
+      "other": "Diğer"
+    },
+    "check": {
+      "yes": "Var",
+      "no": "Yok"
+    },
+    "steps": {
+      "intro": {
+        "title": "Tanışma",
+        "short": "Tanışma",
+        "target": "3 soru · 3 dk",
+        "why": "Spor geçmişi, ağrı / sakatlık ve hedef. Ağrı bildirilen bölge sonraki testlerde uyarı olarak çıkar; hedef programın yönünü belirler."
+      },
+      "airSquat": {
+        "title": "Air Squat",
+        "short": "Air Squat",
+        "target": "10 tekrar",
+        "command": "Dizlerini dışarı ver, kontrollü in kalk.",
+        "why": "Vücut ağırlığıyla temel çömelme: kalça-diz hizası, ayak bileği hareketliliği ve bel kontrolü.",
+        "checks": {
+          "kneeValgus": "Diz içe kaçıyor",
+          "heelLift": "Topuk kalkıyor",
+          "lumbarCollapse": "Bel çöküyor"
+        },
+        "checksOk": {
+          "kneeValgus": "Diz hizası iyi",
+          "heelLift": "Topuklar yerde",
+          "lumbarCollapse": "Bel kontrolü iyi"
+        }
+      },
+      "hipHinge": {
+        "title": "Hip Hinge",
+        "short": "Hip Hinge",
+        "target": "10 tekrar",
+        "command": "Kalçanı geriye gönder, dizini az kır.",
+        "why": "Kalçadan katlanma: hareket belden mi, kalçadan mı geliyor.",
+        "checks": {
+          "backRounding": "Bel bükülüyor",
+          "hipsNotBack": "Kalça geriye gitmiyor (dizden kırıyor)"
+        },
+        "checksOk": {
+          "backRounding": "Bel nötr kalıyor",
+          "hipsNotBack": "Hareket kalçadan geliyor"
+        }
+      },
+      "overheadReach": {
+        "title": "Overhead Reach",
+        "short": "Overhead",
+        "target": "10 tekrar",
+        "command": "Kollarını yukarı kaldır, kaburganı kapalı tut.",
+        "why": "Baş üstüne uzanma: omuz hareketliliği ve kaburga-bel kontrolü.",
+        "checks": {
+          "lumbarArch": "Bel boşluğu artıyor",
+          "shouldersForward": "Omuz öne düşüyor"
+        },
+        "checksOk": {
+          "lumbarArch": "Kaburga kapalı, bel nötr",
+          "shouldersForward": "Omuzlar açık"
+        }
+      },
+      "plank": {
+        "title": "Plank",
+        "short": "Plank",
+        "target": "30 sn",
+        "command": "Karnını sık, belini sabit tut.",
+        "why": "Gövde dayanıklılığı: 30 saniye boyunca bel ve kalça sabit kalıyor mu.",
+        "checks": {
+          "hipSag": "Bel çöküyor",
+          "shaking": "Titreme / kontrol kaybı"
+        },
+        "checksOk": {
+          "hipSag": "Bel sabit",
+          "shaking": "Kontrol iyi"
+        }
+      },
+      "gobletSquat": {
+        "title": "Goblet Squat",
+        "short": "Goblet",
+        "target": "10 tekrar",
+        "command": "Dambılı göğsünde tut, kontrollü in.",
+        "why": "Yük altında çömelme: derinlik, denge ve diz-kalça uyumu.",
+        "checks": {
+          "shallowDepth": "Derinlik yetersiz",
+          "balanceLoss": "Denge kaybı",
+          "kneeHipMisalign": "Diz-kalça uyumu bozuk"
+        },
+        "checksOk": {
+          "shallowDepth": "Derinlik iyi",
+          "balanceLoss": "Denge iyi",
+          "kneeHipMisalign": "Diz-kalça uyumlu"
+        }
+      },
+      "pushUp": {
+        "title": "Push-Up",
+        "short": "Push-Up",
+        "target": "Maksimum tekrar",
+        "command": "Vücudun düz, göğsün yere yaklaşsın.",
+        "why": "İtiş gücü ve gövde kontrolü: kaç tekrar, form ne zaman bozuluyor.",
+        "checks": {
+          "hipDrop": "Bel düşüyor",
+          "elbowControl": "Dirsek kontrolü yok",
+          "neckPosition": "Boyun pozisyonu bozuk"
+        },
+        "checksOk": {
+          "hipDrop": "Gövde düz",
+          "elbowControl": "Dirsek kontrolü iyi",
+          "neckPosition": "Boyun nötr"
+        }
+      },
+      "dumbbellRow": {
+        "title": "Dumbbell Row",
+        "short": "Row",
+        "target": "10 tekrar / kol",
+        "command": "Dirseğini kalçana doğru çek.",
+        "why": "Çekiş ve sırt aktivasyonu: omuz yükseliyor mu, sırt çalışıyor mu.",
+        "checks": {
+          "shoulderShrug": "Omuz yükseliyor",
+          "backInactive": "Sırt aktif değil"
+        },
+        "checksOk": {
+          "shoulderShrug": "Omuz aşağıda",
+          "backInactive": "Sırt aktif"
+        }
+      },
+      "conditioning": {
+        "title": "Kondisyon testi",
+        "short": "Kondisyon",
+        "target": "A: 500 m kürek / ski · B: 1 dk burpee",
+        "why": "Kondisyon seviyesi: süre ya da tekrar, nefes ve tempo. Saat bağlıysa nabız ve 60 saniyelik toparlanma da ölçülür.",
+        "checks": {
+          "heavyBreathing": "Nefes çok zorlanıyor",
+          "tempoDrop": "Tempo düşüyor"
+        },
+        "checksOk": {
+          "heavyBreathing": "Nefes kontrollü",
+          "tempoDrop": "Tempo korunuyor"
+        }
+      },
+      "measurements": {
+        "title": "Ölçüm",
+        "short": "Ölçüm",
+        "target": "Kilo · bel çevresi · foto (ön / yan)",
+        "why": "Başlangıç ölçüleri: kilo, bel çevresi ve fotoğraf. Yeniden testte değişim buradan izlenir."
+      }
+    },
+    "conditioning": {
+      "choose": "Seçenek",
+      "suggested": "Öneri: {{option}}",
+      "option": {
+        "row500": "500 m kürek / ski",
+        "burpee": "1 dk burpee"
+      },
+      "command": {
+        "row500": "500 metreyi olabildiğince hızlı tamamla, tempoyu koru.",
+        "burpee": "Bir dakika boyunca burpee: yere in, kalk, zıpla."
+      },
+      "target": {
+        "row500": "500 m · süreyi tut",
+        "burpee": "60 sn · tekrarı say"
+      }
+    },
+    "metric": {
+      "reps": "Tekrar sayısı",
+      "holdSeconds": "Tutulan süre",
+      "timeSeconds": "Süre (dk:sn)",
+      "invalid": "Geçerli bir sayı girin.",
+      "unit": {
+        "reps": "tekrar",
+        "holdSeconds": "sn",
+        "timeSeconds": "dk:sn"
+      }
+    },
+    "timer": {
+      "countdown": "Geri sayım",
+      "stopwatch": "Kronometre",
+      "start": "Başlat",
+      "stop": "Durdur",
+      "pause": "Duraklat",
+      "reset": "Sıfırla",
+      "status": {
+        "idle": "Hazır",
+        "running": "Sürüyor",
+        "paused": "Duraklatıldı",
+        "done": "Bitti"
+      }
+    },
+    "step": {
+      "command": "Komut",
+      "checks": "Kontrol et",
+      "checksHint": "Var = bulgu",
+      "note": "Antrenör notu",
+      "notePlaceholder": "Örn. İrem lordoz oluşuyor",
+      "dictationHint": "Mikrofona dokunup notu sesle yazdırabilirsiniz.",
+      "saveAndNext": "Kaydet ve devam",
+      "skip": "Bu adımı atla"
+    },
+    "intro": {
+      "lead": "Sporcuya sorun ve cevapları işaretleyin.",
+      "experience": {
+        "question": "Daha önce spor yaptın mı?",
+        "label": "Spor geçmişi",
+        "regular": "Evet, düzenli",
+        "occasional": "Ara ara",
+        "none": "Hayır",
+        "noteLabel": "Hangi spor, ne kadar?",
+        "notePlaceholder": "Örn. 2 yıl fitness, haftada 3 gün"
+      },
+      "pain": {
+        "question": "Herhangi bir ağrı / sakatlık var mı?",
+        "label": "Ağrı / sakatlık",
+        "no": "Yok",
+        "yes": "Var",
+        "none": "Yok",
+        "regions": "Bölge",
+        "noteLabel": "Ne zaman, nasıl?",
+        "notePlaceholder": "Örn. uzun oturunca bel ağrısı"
+      },
+      "goals": {
+        "question": "Hedefin ne?",
+        "label": "Hedef"
+      },
+      "note": "Not",
+      "notePlaceholder": "Eklemek istedikleriniz"
+    },
+    "measurements": {
+      "weight": "Kilo",
+      "waist": "Bel çevresi",
+      "waistShort": "Bel",
+      "height": "Boy",
+      "restingHr": "Dinlenik nabız",
+      "fromWatch": "Saatten al",
+      "photos": "Fotoğraf",
+      "photosHint": "Ön ve yan",
+      "front": "Ön",
+      "side": "Yan",
+      "takePhoto": "Çek",
+      "choosePhoto": "Seç",
+      "removePhoto": "Fotoğrafı kaldır",
+      "photoPermission": "Kamera izni verilmedi. Ayarlardan izin verin ya da galeriden seçin.",
+      "photoError": "Fotoğraf eklenemedi. Tekrar deneyin."
+    },
+    "recommend": {
+      "caution": "Tanışmada ağrı bildirildi ({{regions}}) — ağrı olursa testi durdurun.",
+      "reason": {
+        "start": "İlk adım: spor geçmişi, ağrı ve hedef.",
+        "default": "Programdaki sıradaki test.",
+        "hingeAfterSquatBack": "Air Squat'ta bel çöktü — Hip Hinge'de hareketin belden mi kalçadan mı geldiğine bakın.",
+        "reachAfterHingeBack": "Hip Hinge'de bel büküldü — baş üstü uzanmada kaburga ve bel kontrolünü izleyin.",
+        "plankAfterCoreFlags": "Bel kontrolünde bulgu var — Plank'te gövde sabitliğine özellikle bakın.",
+        "gobletAfterKneeValgus": "Air Squat'ta diz içe kaçtı — Goblet Squat'ta yük altında diz-kalça uyumunu kontrol edin.",
+        "gobletAfterHeelLift": "Air Squat'ta topuk kalktı — Goblet Squat'ta derinliği ve topukları izleyin.",
+        "pushUpAfterPlankSag": "Plank'te bel çöktü — şınavda bel düşmesini izleyin, gerekirse dizden yaptırın.",
+        "rowAfterShouldersForward": "Overhead Reach'te omuz öne düştü — Row'da omuz yükseliyor mu bakın.",
+        "conditioningLowImpact": "Diz / bel ağrısı bildirildi — sıçramalı burpee yerine 500 m kürek önerilir.",
+        "measurements": "Son adım: kilo, bel çevresi ve fotoğraf.",
+        "result": "Bütün adımlar tamam — sonucu tamamlayın."
+      }
+    },
+    "next": {
+      "title": "Sıradaki önerilen test",
+      "allDone": "Bütün testler tamam",
+      "allDoneDescription": "Sonuç ekranında dört alanı değerlendirip en çok geliştirilecek noktayı seçin.",
+      "saved": "{{step}} kaydedildi",
+      "start": "Başla: {{step}}",
+      "chooseOther": "Başka test seç",
+      "toResult": "Sonuca geç",
+      "option": "Önerilen seçenek: {{option}}"
+    },
+    "session": {
+      "title": "İlk ders test programı",
+      "allSteps": "Bütün testler",
+      "nextRecommended": "Sıradaki önerilen",
+      "startHere": "Buradan başlayın",
+      "start": "Başla",
+      "done": "Yapıldı",
+      "skipped": "Atlandı",
+      "recommended": "Önerilen",
+      "flaggedLastTime": "Geçen sefer bulgu",
+      "faults_one": "{{count}} bulgu",
+      "faults_other": "{{count}} bulgu",
+      "clean": "Temiz",
+      "painReported": "ağrı bildirdi",
+      "resultTodo": "Sonucu tamamla",
+      "resultDone": "Sonuç kaydedildi",
+      "resultHint": "Core · Glute · Sırt · Kondisyon + öncelik",
+      "delete": "Oturumu sil",
+      "deleteConfirm": {
+        "title": "Test oturumu silinsin mi?",
+        "description": "Bu oturumun bütün sonuçları, ölçümleri ve fotoğrafları kalıcı olarak silinir."
+      }
+    },
+    "result": {
+      "title": "Sonuç",
+      "lead": "Seviyeler bulgulardan önerildi; gerekirse değiştirin.",
+      "suggestion": "Öneri: {{level}} ({{observed}} kontrolde {{faults}} bulgu)",
+      "noData": "Bu alan için test yapılmadı.",
+      "priorityQuestion": "En çok geliştirmemiz gereken nokta?",
+      "prioritySuggestion": "Öneri: {{priority}}",
+      "priority": "Öncelik",
+      "priorityNote": "Öncelik notu",
+      "priorityNotePlaceholder": "Örn. üst vücut, ardından core",
+      "coachNote": "Antrenör notu",
+      "coachNotePlaceholder": "Programı buna göre yazacağım…",
+      "save": "Değerlendirmeyi kaydet",
+      "update": "Değerlendirmeyi güncelle",
+      "doneTitle": "Değerlendirme kaydedildi",
+      "doneSubtitle": "{{name}}",
+      "doneDescription": "Şimdi bu sonuca göre program oluşturabilir ya da PDF raporunu sporcuyla paylaşabilirsiniz.",
+      "createProgram": "Program oluştur",
+      "report": "PDF raporu",
+      "backToAthlete": "Analiz sayfasına dön"
+    }
+  },
+  "heartRate": {
+    "connect": "Saat bağla",
+    "connectHint": "Sporcunun saatinden ya da göğüs bandından canlı nabız",
+    "disconnect": "Bağlantıyı kes",
+    "unnamed": "Nabız cihazı",
+    "avg": "Ort.",
+    "max": "En yüksek",
+    "maxShort": "En yüksek nabız",
+    "recovery": "Toparlanma",
+    "peakSoFar": "Şu ana kadar en yüksek: {{value}} bpm",
+    "recoveryLine": "60 sn toparlanma: −{{value}} bpm",
+    "avgLine": "Ortalama {{value}} bpm",
+    "context": "nabız en yüksek {{max}}, ort. {{avg}}, 60 sn toparlanma {{recovery}} bpm",
+    "phase": {
+      "idle": "Canlı",
+      "recording": "Kaydediliyor",
+      "recovery": "Toparlanma {{seconds}}",
+      "done": "Kayıt tamam"
+    },
+    "errors": {
+      "unsupported": "Bu cihazda Bluetooth nabız okunamıyor.",
+      "permission": "Bluetooth izni verilmedi.",
+      "poweredOff": "Bluetooth kapalı. Açıp tekrar deneyin.",
+      "cancelled": "Seçim iptal edildi.",
+      "connection": "Bağlantı koptu. Saati yaklaştırıp tekrar bağlayın."
+    },
+    "sheet": {
+      "title": "Saat bağla",
+      "subtitle": "Nabız yayınlayan saat ya da göğüs bandı",
+      "scan": "Ara",
+      "scanning": "Aranıyor…",
+      "tapToConnect": "Bağlanmak için dokunun",
+      "demo": "Demo nabız",
+      "demoHint": "Cihazsız deneme (yalnız geliştirmede)",
+      "unsupported": "Bu cihazda Bluetooth nabız desteği yok. Web'de Chrome ya da Edge kullanın.",
+      "help": "Saatte nabız yayınını açın (Garmin: \"Nabzı yayınla\", Polar: \"HR sensör modu\"). Apple Watch için bir yayın uygulaması gerekir."
+    }
+  },
+  "dictation": {
+    "start": "Sesle yazdır",
+    "stop": "Dinlemeyi durdur",
+    "listening": "Dinliyorum…",
+    "errors": {
+      "unavailable": "Bu cihazda konuşma tanıma yok.",
+      "permission": "Mikrofon / konuşma tanıma izni verilmedi.",
+      "noSpeech": "Ses algılanmadı. Tekrar deneyin.",
+      "failed": "Dinleme durdu. Tekrar deneyin."
+    }
+  },
+  "exercises": {
+    "title": "Hareketler",
+    "subtitle": "{{count}} hareket · {{videos}} videolu",
+    "search": "Hareket ara",
+    "all": "Tümü",
+    "videoOnly": "Videolu",
+    "notFound": "Hareket bulunamadı.",
+    "empty": {
+      "title": "Hareket bulunamadı",
+      "description": "Aramayı ya da süzgeçleri değiştirin.",
+      "action": "Süzgeçleri temizle"
+    },
+    "categories": {
+      "lowerBody": "Alt vücut",
+      "upperBody": "Üst vücut",
+      "core": "Core",
+      "conditioning": "Kondisyon",
+      "mobility": "Mobilite"
+    },
+    "difficulty": {
+      "easy": "Kolay",
+      "medium": "Orta",
+      "hard": "Zor"
+    },
+    "regions": {
+      "chest": "Göğüs",
+      "back": "Sırt",
+      "shoulders": "Omuz",
+      "biceps": "Biceps",
+      "triceps": "Triceps",
+      "core": "Karın / core",
+      "obliques": "Yan karın",
+      "lowerBack": "Bel",
+      "glutes": "Kalça (glute)",
+      "quads": "Ön bacak",
+      "hamstrings": "Arka bacak",
+      "adductors": "İç bacak",
+      "calves": "Baldır",
+      "hips": "Kalça eklemi",
+      "thoracic": "Göğüs omurgası",
+      "fullBody": "Tüm vücut",
+      "cardio": "Kondisyon"
+    },
+    "equipment": {
+      "bodyweight": "Ekipmansız",
+      "dumbbell": "Dambıl",
+      "kettlebell": "Kettlebell",
+      "barbell": "Bar",
+      "band": "Direnç bandı",
+      "bench": "Sehpa",
+      "box": "Step / kutu",
+      "mat": "Mat",
+      "foamRoller": "Foam roller",
+      "medBall": "Sağlık topu",
+      "machine": "Kürek / ski ergometresi",
+      "pullUpBar": "Barfiks barı"
+    },
+    "media": {
+      "play": "Videoyu oynat",
+      "tapToPlay": "Oynatmak için dokunun",
+      "noVideo": "Bu hareketin videosu yok — kısa tanıtımı aşağıda.",
+      "videoError": "Video yüklenemedi.",
+      "difficulty": "Zorluk",
+      "regions": "Çalıştırdığı bölgeler",
+      "equipment": "Ekipman"
+    },
+    "items": {
+      "AIR_SQUAT": {
+        "name": "Air Squat",
+        "description": "Ayaklar omuz genişliğinde; kalçayı geriye ve aşağı gönder, dizleri ayak uçlarıyla aynı yöne it, topuklardan itip kalk."
+      },
+      "SQUAT": {
+        "name": "Squat",
+        "description": "Temel çömelme: göğüs açık, bel nötr, uyluklar yere paralele yaklaşana kadar in ve kalk."
+      },
+      "SUMO_SQUAT": {
+        "name": "Sumo Squat",
+        "description": "Geniş duruş, ayak uçları dışa; dizleri dışa iterek dik gövdeyle in. İç bacak ve kalçayı çalıştırır."
+      },
+      "GOBLET_SQUAT": {
+        "name": "Goblet Squat",
+        "description": "Dambılı ya da kettlebell'i göğüs önünde dikey tut; dirsekler dizlerin içinden geçecek kadar kontrollü in, topuklardan itip kalk."
+      },
+      "FRONT_SQUAT_WITH_DUMBBELL": {
+        "name": "Dambılla Front Squat",
+        "description": "Dambıllar omuzlarda; dik gövdeyle squat. Ön bacak ve gövde kontrolü ister."
+      },
+      "BACK_SQUAT_WITH_BAR": {
+        "name": "Barla Back Squat",
+        "description": "Bar üst sırtta; nefesi tut, gövdeyi kilitle, kontrollü in ve güçlü kalk. Deneyimli sporcu için."
+      },
+      "BULGARIAN_SPLIT_SQUAT": {
+        "name": "Bulgarian Split Squat",
+        "description": "Arka ayak sehpada; ön dizi ayak ucuyla hizalı tutarak dikey in. Tek bacak kuvveti ve denge."
+      },
+      "BACK_LUNGE": {
+        "name": "Geri Lunge",
+        "description": "Bir adım geriye at, iki diz 90° olana kadar in, ön ayağın topuğundan itip dön. Dizlere dostudur."
+      },
+      "FORWARD_LUNGE": {
+        "name": "Öne Lunge",
+        "description": "Öne adım at, gövde dik, ön diz ayak ucunu geçmeden in ve geri dön."
+      },
+      "LATERAL_LUNGE": {
+        "name": "Yana Lunge",
+        "description": "Yana geniş adım; bir bacağı bükerken diğeri düz kalsın, kalçayı geriye gönder."
+      },
+      "WALKING_LUNGE_WITH_MED_BALL": {
+        "name": "Sağlık Topuyla Yürüyen Lunge",
+        "description": "Sağlık topunu göğüste tutarak yürüyen lunge; adım adım ilerle."
+      },
+      "STEP_UP": {
+        "name": "Step Up (Basamağa Çıkış)",
+        "description": "Bir ayağı basamağa koy, o bacağın topuğundan itip çık, kontrollü in. Diz dostu tek bacak kuvveti."
+      },
+      "SINGLE_LEG_SQUAT_WITH_STEP": {
+        "name": "Step ile Tek Bacak Squat",
+        "description": "Basamakta tek bacak üzerinde kontrollü çömel; diğer bacak boşta. İleri seviye."
+      },
+      "HIP_HINGE_DRILL": {
+        "name": "Hip Hinge (Çubukla)",
+        "description": "Çubuğu sırtına koy (baş, sırt ve kuyruk sokumu değsin); dizleri az kırarak kalçayı geriye gönder, temas bozulmadan dön."
+      },
+      "GOOD_MORNING": {
+        "name": "Good Morning",
+        "description": "Eller başın arkasında; sırt düz, kalçadan öne eğil ve arka bacak gerilince dön."
+      },
+      "DUMBBELL_ROMANIAN_DEADLIFT": {
+        "name": "Dambılla Romanian Deadlift",
+        "description": "Dambıllar uyluk önünde; dizler hafif kırık, kalçayı geriye iterek dambılları kaval kemiğine kadar indir."
+      },
+      "SINGLE_ARM_KETTLEBELL_DEADLIFT": {
+        "name": "Tek Kol Kettlebell Deadlift",
+        "description": "Tek elde kettlebell; gövdeyi döndürmeden kalçadan katlan ve kalk. Kalça ve gövde stabilitesi."
+      },
+      "DEADLIFT_WITH_BAR": {
+        "name": "Barla Deadlift",
+        "description": "Bar ayakların ortasında; sırt nötr, bacaklarla itip barı vücuda yakın kaldır. Deneyimli sporcu için."
+      },
+      "HIP_BRIDGE": {
+        "name": "Kalça Köprüsü",
+        "description": "Sırtüstü, dizler bükülü; kalçayı sıkarak omuz-kalça-diz düz olana kadar kaldır."
+      },
+      "HIP_THRUST_WITH_BENCH": {
+        "name": "Sehpada Hip Thrust",
+        "description": "Sırt sehpaya dayalı; kalçayı tavana it, tepede 1 sn sık. Güçlü glute çalışması."
+      },
+      "HIP_THRUST_WITH_BAR": {
+        "name": "Barla Hip Thrust",
+        "description": "Bar kalçada, sırt sehpada; yük altında kalça itişi."
+      },
+      "CALF_RAISES": {
+        "name": "Topuk Kaldırma",
+        "description": "Ayak uçlarında yüksel, tepede bekle, yavaş in."
+      },
+      "WALL_SIT": {
+        "name": "Duvar Oturuşu",
+        "description": "Sırt duvarda, dizler 90°; pozisyonu süre boyunca koru."
+      },
+      "CLAMSHELL_WITH_MINIBAND": {
+        "name": "Mini Bantla Clamshell",
+        "description": "Yan yat, dizlerde mini bant; topukları birleşik tutarak üst dizi aç ve kapat."
+      },
+      "SIDE_WALK_WITH_BAND": {
+        "name": "Bantla Yan Yürüyüş",
+        "description": "Bant dizlerde ya da bileklerde; yarım squat pozisyonunda yana adımla."
+      },
+      "DONKEY_KICKS": {
+        "name": "Donkey Kick",
+        "description": "Dört ayak; dizi bükülü bacağı tavana doğru kaldır, beli çukurlaştırma."
+      },
+      "WALL_PUSH_UP": {
+        "name": "Duvarda Şınav",
+        "description": "Eller duvarda; vücut düz, göğsü duvara yaklaştır. Şınavın en kolay hâli."
+      },
+      "INCLINE_PUSH_UP": {
+        "name": "Eğimli Şınav",
+        "description": "Eller sehpada ya da basamakta; vücut düz, göğsü kenara indir. Şınav için ara adım."
+      },
+      "NEGATIVE_PUSH_UP": {
+        "name": "Negatif Şınav",
+        "description": "Şınav pozisyonundan 3–5 saniyede yavaşça yere in; dizden geri dön."
+      },
+      "PUSH_UP": {
+        "name": "Şınav",
+        "description": "Eller omuz altında, vücut baştan topuğa düz; göğsü yere yaklaştır ve it."
+      },
+      "PIKE_PUSH_UP": {
+        "name": "Pike Şınav",
+        "description": "Kalça yukarıda ters V; başı ellerin arasına indir. Omuz ağırlıklı itiş."
+      },
+      "DUMBBELL_CHEST_PRESS_WITH_BENCH": {
+        "name": "Sehpada Dambılla Chest Press",
+        "description": "Sehpada sırtüstü; dambılları göğüs hizasından yukarı it, kontrollü indir."
+      },
+      "BENCH_PRESS_WITH_BAR": {
+        "name": "Barla Bench Press",
+        "description": "Barla göğüs presi; kürek kemikleri sehpada sabit. Gözetmenle."
+      },
+      "DUMBBELL_BENT_OVER_ROW": {
+        "name": "Dambılla Bent Over Row",
+        "description": "Kalçadan öne eğil, sırt düz; dambılları dirsekleri kalçaya doğru çekerek kaldır."
+      },
+      "KETTLEBELL_SEESAW_ROW": {
+        "name": "Kettlebell Seesaw Row",
+        "description": "Eğik pozisyonda iki kettlebell ile dönüşümlü çekiş."
+      },
+      "RENEGADE_ROW_WITH_DUMBBELL": {
+        "name": "Dambılla Renegade Row",
+        "description": "Dambıllar üzerinde plank; kalçayı döndürmeden dönüşümlü çekiş. İleri seviye."
+      },
+      "SEATED_90_ROW_WITH_BAND": {
+        "name": "Bantla Oturarak 90° Row",
+        "description": "Oturarak bant çekişi; kürek kemiklerini geriye ve aşağı topla."
+      },
+      "BANDED_LAT_PULLDOWN": {
+        "name": "Bantla Lat Pulldown",
+        "description": "Bandı yukarıdan göğse doğru çek; dirsekleri yanlara indir."
+      },
+      "BAND_ASSISTED_PULL_UP": {
+        "name": "Bant Destekli Barfiks",
+        "description": "Bant barfiks barında, ayak ya da diz bantta; göğsü bara doğru çek."
+      },
+      "DEAD_HANG": {
+        "name": "Barda Asılı Durma",
+        "description": "Barfiks barına tutun, omuzları hafif aşağı çekerek asılı kal. Kavrama ve omuz sağlığı."
+      },
+      "BAND_PULL_APART": {
+        "name": "Bantla Pull Apart",
+        "description": "Bandı göğüs hizasında iki yana açarak kürek kemiklerini birleştir."
+      },
+      "REVERSE_FLY": {
+        "name": "Reverse Fly",
+        "description": "Öne eğik; hafif dambılları kollar açık şekilde yanlara kaldır. Arka omuz ve sırt."
+      },
+      "WALL_ANGEL": {
+        "name": "Wall Angel (Duvar Meleği)",
+        "description": "Sırt ve kollar duvarda; kolları temas bozmadan yukarı-aşağı kaydır. Duruş için."
+      },
+      "SHOULDER_PRESS": {
+        "name": "Omuz Press",
+        "description": "Dambılları omuzdan başın üstüne it; kaburgaları kapalı tut, beli çukurlaştırma."
+      },
+      "SHOULDER_LATERAL_RAISE_WITH_DUMBBELL": {
+        "name": "Dambılla Omuz Yana Kaldırma",
+        "description": "Dambılları yanlardan omuz hizasına kaldır, yavaş indir."
+      },
+      "BICEPS_CURL": {
+        "name": "Biceps Curl",
+        "description": "Dirsekler gövdede sabit; dambılları omuza doğru bük."
+      },
+      "TRICEPS_DIPS": {
+        "name": "Triceps Dips",
+        "description": "Eller sehpada arkada; dirsekleri geriye bükerek in ve it."
+      },
+      "SINGLE_ARM_DUMBBELL_OVERHEAD_TRICEP_EXTENSION": {
+        "name": "Tek Kol Dambılla Baş Üstü Triceps Ekstansiyonu",
+        "description": "Dambıl baş üstünde; dirsek sabit, ön kolu başın arkasına indirip uzat."
+      },
+      "PLANK": {
+        "name": "Plank",
+        "description": "Önkollar yerde, vücut baştan topuğa düz; karnı sık, kalçayı düşürme."
+      },
+      "SIDE_PLANK": {
+        "name": "Yan Plank",
+        "description": "Yan yatıp önkolda yüksel; kalçayı düşürmeden düz çizgide kal."
+      },
+      "CONTRALATERAL_DEADBUG_ONE_SIDE": {
+        "name": "Kontralateral Deadbug Tek Taraf",
+        "description": "Sırtüstü, kollar ve dizler yukarıda; beli yere bastırarak karşı kol ve bacağı uzat."
+      },
+      "BIRD_DOG": {
+        "name": "Bird Dog",
+        "description": "Dört ayak; karşı kol ve bacağı uzat, beli ve kalçayı sabit tut."
+      },
+      "CRUNCH": {
+        "name": "Crunch",
+        "description": "Sırtüstü, dizler bükülü; omuzları yerden kaldırıp karnı sık."
+      },
+      "SUPERMAN": {
+        "name": "Superman",
+        "description": "Yüzüstü; kol ve bacakları birlikte hafifçe kaldır, kısa bekle."
+      },
+      "REVERSE_CRUNCH": {
+        "name": "Ters Crunch",
+        "description": "Sırtüstü; dizleri göğse çekerek kalçayı yerden kaldır."
+      },
+      "BICYCLE": {
+        "name": "Bisiklet",
+        "description": "Sırtüstü; dirseği karşı dize götürerek bisiklet çevirir gibi dönüşümlü çalış."
+      },
+      "RUSSIAN_TWIST": {
+        "name": "Russian Twist",
+        "description": "Oturup geriye hafif yaslan; gövdeyi iki yana döndür."
+      },
+      "MOUNTAIN_CLIMBER": {
+        "name": "Dağcı",
+        "description": "Şınav pozisyonunda dizleri hızla dönüşümlü göğse çek."
+      },
+      "SHOULDER_TAPS": {
+        "name": "Omuz Dokunuşu",
+        "description": "Yüksek plankta kalçayı sallamadan dönüşümlü omuza dokun."
+      },
+      "STAND_WOODCHOP": {
+        "name": "Ayakta Woodchop",
+        "description": "Bandı çapraz olarak yukarıdan aşağı çek; gövdeyle döndür, kolla değil."
+      },
+      "FARMER_CARRY": {
+        "name": "Farmer Yürüyüşü",
+        "description": "İki elde ağırlık; dik duruşla, omuzlar aşağıda, kısa adımlarla yürü."
+      },
+      "OVERHEAD_CARRY_DUMBBELL_WALKING": {
+        "name": "Dambılla Baş Üstü Taşıyarak Yürüyüş",
+        "description": "Dambıl baş üstünde kilitli; kaburgayı kapalı tutarak yürü."
+      },
+      "BEAR_CRAWL": {
+        "name": "Ayı Yürüyüşü",
+        "description": "Dört ayak, dizler yerden birkaç cm yukarıda; karşı el-ayakla ilerle."
+      },
+      "HOLLOW_BODY_HOLD": {
+        "name": "Hollow Body Hold",
+        "description": "Sırtüstü; bel yere yapışık, kol ve bacakları uzatıp hafif kaldırarak bekle. Zor."
+      },
+      "LYING_DOUBLE_LEG_RAISE": {
+        "name": "Yatarak Çift Bacak Kaldırma",
+        "description": "Sırtüstü; bel yerden kalkmadan iki bacağı birlikte kaldır ve indir."
+      },
+      "PLANK_TO_PUSH_UP": {
+        "name": "Plank’tan Şınava",
+        "description": "Önkol plankından tek tek ellere yüksel ve geri in."
+      },
+      "PLANK_DUMBBELL_PULL_THROUGH": {
+        "name": "Plankta Dambıl Pull Through",
+        "description": "Yüksek plankta dambılı gövdenin altından bir yandan diğerine çek; kalça sabit."
+      },
+      "TURKISH_GET_UP_WITH_DUMBBELL": {
+        "name": "Dambılla Turkish Get Up",
+        "description": "Yerden ayağa, dambıl hep yukarıda; adım adım kalk ve geri yat. Tüm vücut kontrolü."
+      },
+      "JUMPING_JACK": {
+        "name": "Jumping Jack",
+        "description": "Kol ve bacakları aynı anda açıp kapatarak zıpla."
+      },
+      "HIGH_KNEE_RUN": {
+        "name": "Yüksek Diz Koşusu",
+        "description": "Yerinde koşu; dizleri kalça hizasına çek, kollarla tempo tut."
+      },
+      "ROW_ERG": {
+        "name": "Kürek Ergometresi",
+        "description": "Bacaklarla it, sonra gövde, en son kollar; dönüşte tersi. 500 m testinin aleti."
+      },
+      "SKI_ERG": {
+        "name": "Ski Ergometresi",
+        "description": "Kolları yukarıdan aşağı çekerken kalçadan katlan; ritmik ve güçlü çekişler."
+      },
+      "BURPEE_WITHOUT_PUSH_UP": {
+        "name": "Burpee (Şınavsız)",
+        "description": "Çömel, elleri yere koy, ayakları geriye at, geri getir ve zıpla — şınavsız."
+      },
+      "JUMPING_SQUAT": {
+        "name": "Sıçrayarak Squat",
+        "description": "Squat'tan patlayıcı şekilde zıpla, yumuşak in ve hemen tekrar et."
+      },
+      "KETTLEBELL_SWING": {
+        "name": "Kettlebell Swing",
+        "description": "Kalçadan katlan, kettlebell'i kalça itişiyle göğüs hizasına savur; kollarla kaldırma."
+      },
+      "FRONT_SQUAT_TO_SHOULDER_PRESS": {
+        "name": "Front Squat + Omuz Press",
+        "description": "Dambıllar omuzda squat, kalkarken baş üstüne it (thruster)."
+      },
+      "BURPEE": {
+        "name": "Burpee",
+        "description": "Çömel, elleri yere koy, ayakları geriye at, göğsü yere indir, geri getir ve zıpla. 1 dk testinin hareketi."
+      },
+      "JUMP_LUNGE": {
+        "name": "Sıçrayarak Lunge",
+        "description": "Lunge pozisyonunda zıplayarak bacak değiştir; yumuşak iniş."
+      },
+      "DUMBBELL_HANG_POWER_CLEAN_AND_PUSH_PRESS": {
+        "name": "Dambılla Hang Power Clean + Push Press",
+        "description": "Dambılları uyluktan omuza patlayıcı şekilde al, bacak yardımıyla baş üstüne it."
+      },
+      "ARM_CIRCLE": {
+        "name": "Kol Çevirme",
+        "description": "Kollar yanlarda; küçükten büyüğe öne ve geriye daireler çiz."
+      },
+      "OVERHEAD_REACH": {
+        "name": "Overhead Reach (Baş Üstü Uzanma)",
+        "description": "Kolları öne ve baş üstüne uzat; kaburgaları kapalı, beli çukurlaştırmadan in-çık."
+      },
+      "CAT_CAMEL": {
+        "name": "Kedi-Deve",
+        "description": "Dört ayak; sırtı yavaşça yuvarla ve çukurlaştır."
+      },
+      "OPEN_BOOK": {
+        "name": "Kitap Açma",
+        "description": "Yan yat, dizler bükülü; üst kolu kitap açar gibi arkaya aç, gözler eli izlesin."
+      },
+      "QUADRUPED_THORACIC_ROTATION": {
+        "name": "Dört Ayak Pozisyonunda Torakal Rotasyon",
+        "description": "Dört ayak, bir el başın arkasında; dirseği tavana doğru döndür."
+      },
+      "THORACIC_EXTENSION_FOAM_ROLLER": {
+        "name": "Foam Roller ile Torakal Ekstansiyon",
+        "description": "Foam roller üst sırtın altında; başı destekleyerek geriye uzan."
+      },
+      "INCH_WORM": {
+        "name": "Inch Worm",
+        "description": "Ayakta öne eğil, ellerle şınav pozisyonuna yürü, geri yürü ve kalk."
+      },
+      "HAMSTRING_FLOW": {
+        "name": "Hamstring Akışı",
+        "description": "Kalçadan katlanıp dinamik olarak arka bacağı esnet."
+      },
+      "HIP_FLEXOR_STRETCH": {
+        "name": "Kalça Fleksör Germe",
+        "description": "Yarım diz çök; kalçayı sıkıp öne kaydırarak ön kalçayı esnet."
+      },
+      "HIP_90_90_FORWARD_REACHING": {
+        "name": "90/90 Kalça Öne Uzanma",
+        "description": "İki bacak 90/90 pozisyonunda; dik gövdeyle öne uzan."
+      },
+      "WORLD_GREATEST_STRETCH": {
+        "name": "World's Greatest Stretch",
+        "description": "Lunge pozisyonunda elleri yere koy, dirseği ayak içine indir ve kolu tavana döndür."
+      },
+      "CHILD_POSE_STRETCH": {
+        "name": "Çocuk Pozu Germe",
+        "description": "Diz çök, kalçayı topuklara oturt, kolları öne uzat ve nefes al."
+      },
+      "DOWNWARD_TO_COBRA": {
+        "name": "Aşağı Bakan Köpekten Kobraya",
+        "description": "Aşağı bakan köpekten kobraya akış; omurga ve arka bacak hareketliliği."
+      },
+      "PIGEON_HIP_ROTATOR_STRETCH": {
+        "name": "Güvercin Pozunda Kalça Rotator Germe",
+        "description": "Güvercin pozunda ön kalçanın derin rotatorlarını esnet."
+      }
+    }
+  },
+  "tests": {
+    "title": "Testler",
+    "movement": "Hareket",
+    "protocol": {
+      "duration": "30 dakika · 10 adım",
+      "title": "İlk ders test programı",
+      "description": "Tanışma, hareket, kuvvet ve kondisyon testleri, ölçüm; sonunda dört alanın değerlendirmesi ve en çok geliştirilecek nokta. Her adımın sonunda sıradaki test önerilir.",
+      "start": "Bir sporcuyla başla"
+    },
+    "resultDescription": "Core · Glute · Upper back (sırt) · Kondisyon: zayıf / orta / iyi (kondisyonda düşük / orta / iyi). Uygulama bulgulardan önerir, karar antrenörün. Ardından en çok geliştirilecek nokta seçilir ve program buna göre yazılır."
+  },
+  "programs": {
+    "tab": {
+      "createTitle": "Program asistanı",
+      "createDescription": "Değerlendirmeye göre, istediğiniz varyasyonla program yazdırın — yazarak ya da konuşarak.",
+      "create": "Program oluştur",
+      "saved": "Kayıtlı programlar",
+      "empty": "Henüz program yok.",
+      "meta_one": "Haftada {{days}} gün · {{weeks}} hafta · {{count}} hareket · {{date}}",
+      "meta_other": "Haftada {{days}} gün · {{weeks}} hafta · {{count}} hareket · {{date}}"
+    },
+    "chat": {
+      "title": "Program asistanı",
+      "basedOn": "{{date}} değerlendirmesi",
+      "noAssessment": "Değerlendirme yok",
+      "intro": "Nasıl bir program istediğinizi yazın ya da mikrofona dokunup söyleyin. Değerlendirme özeti ve yukarıdaki varyasyon otomatik eklenir.",
+      "placeholder": "Örn. haftada 3 gün, üst vücut ağırlıklı, dizleri yormasın",
+      "send": "Gönder",
+      "thinking": "Program hazırlanıyor…",
+      "dictationHint": "Mikrofona dokunup konuşun; durdurunca mesaj kendiliğinden gönderilir.",
+      "suggestions": {
+        "fromAssessment": "Değerlendirmeye göre program yaz",
+        "home": "Ev versiyonu, ekipmansız",
+        "upperBody": "Üst vücut ağırlıklı olsun",
+        "short": "30 dakikalık kısa seanslar"
+      }
+    },
+    "preferences": {
+      "title": "Varyasyon",
+      "short": "{{days}} gün · {{minutes}} dk · {{weeks}} hafta · {{place}}",
+      "days": "Haftada",
+      "daysOption_one": "{{count}} gün",
+      "daysOption_other": "{{count}} gün",
+      "minutes": "Seans süresi",
+      "minutesOption_one": "{{count}} dk",
+      "minutesOption_other": "{{count}} dk",
+      "weeks": "Süre",
+      "weeksOption_one": "{{count}} hafta",
+      "weeksOption_other": "{{count}} hafta",
+      "placeLabel": "Ortam",
+      "place": {
+        "gym": "Salon",
+        "home": "Ev",
+        "outdoor": "Açık alan"
+      },
+      "equipment": "Ekipman",
+      "summary": "Haftada {{days}} gün, seans {{minutes}} dk, {{weeks}} hafta, ortam: {{place}}, ekipman: {{equipment}}."
+    },
+    "preview": {
+      "meta_one": "Haftada {{days}} gün · {{minutes}} dk · {{weeks}} hafta · {{count}} hareket",
+      "meta_other": "Haftada {{days}} gün · {{minutes}} dk · {{weeks}} hafta · {{count}} hareket",
+      "day": "Gün {{number}}",
+      "open": "Aç",
+      "save": "Kaydet",
+      "saved": "Kaydedildi"
+    },
+    "view": {
+      "meta_one": "Haftada {{days}} gün · {{minutes}} dk · {{weeks}} hafta · {{count}} hareket",
+      "meta_other": "Haftada {{days}} gün · {{minutes}} dk · {{weeks}} hafta · {{count}} hareket",
+      "sharePdf": "PDF paylaş",
+      "editInChat": "Sohbetle düzenle",
+      "rest": "Dinlenme {{seconds}} sn",
+      "notInCatalog": "Bu hareket katalogda yok; tanıtımı program asistanının yazdığı.",
+      "delete": "Programı sil",
+      "deleteConfirm": {
+        "title": "Program silinsin mi?",
+        "description": "\"{{title}}\" kalıcı olarak silinir."
+      },
+      "footnote": "Program asistanının önerisidir; sporcuya vermeden önce gözden geçirin."
+    },
+    "sections": {
+      "warmup": "Isınma",
+      "main": "Ana bölüm",
+      "conditioning": "Kondisyon",
+      "cooldown": "Soğuma"
+    },
+    "context": {
+      "client": "Sporcu",
+      "noAssessment": "Henüz değerlendirme yok; genel bir başlangıç programı yaz.",
+      "noFaults": "bulgu yok",
+      "coachNote": "antrenör notu",
+      "cleanMovement": "Hareket testlerinde bulgu yok."
+    },
+    "errors": {
+      "not_configured": "Program asistanı sunucuda yapılandırılmamış (ANTHROPIC_API_KEY eksik).",
+      "bad_request": "İstek okunamadı. Sohbeti yenileyip tekrar deneyin.",
+      "refusal": "Bu istek için program yazılamadı. İsteği farklı ifade edin.",
+      "truncated": "Yanıt yarıda kesildi. Daha kısa bir program isteyin.",
+      "invalid_output": "Yanıt okunamadı. Tekrar deneyin.",
+      "rate_limited": "Çok sık istek gönderildi. Biraz bekleyip tekrar deneyin.",
+      "upstream": "Program asistanına ulaşılamadı. Tekrar deneyin.",
+      "network": "Bağlantı yok. İnternet bağlantınızı kontrol edin.",
+      "save": "Program kaydedilemedi."
+    }
+  },
+  "report": {
+    "title": "Analiz raporu",
+    "badge": "Analiz",
+    "date": "Tarih: {{date}}",
+    "coach": "Antrenör: {{name}}",
+    "completedSteps": "{{done}}/{{total}} adım",
+    "summary": "Değerlendirme özetin",
+    "priority": "En çok geliştireceğimiz nokta",
+    "noEvaluation": "Değerlendirme henüz tamamlanmadı.",
+    "intro": {
+      "experience": "Spor geçmişin",
+      "pain": "Ağrı / sakatlık",
+      "goals": "Hedefin"
+    },
+    "columns": {
+      "test": "Test",
+      "result": "Sonuç",
+      "observations": "Gözlemler"
+    },
+    "skipped": "Atlandı",
+    "notDone": "Yapılmadı",
+    "noChecks": "Gözlem işaretlenmedi",
+    "heartRate": "Nabız: en yüksek {{max}} · ortalama {{avg}} · 60 sn toparlanma {{recovery}} bpm",
+    "coachNote": "Antrenörünün notu",
+    "footer": "Bu rapor {{coach}} tarafından DeepTrainer ile hazırlandı. Sorularını antrenörüne sorabilirsin.",
+    "yourCoach": "antrenörün",
+    "fileSuffix": "analiz",
+    "shareTitle": "Raporu paylaş",
+    "program": {
+      "title": "Antrenman programın",
+      "badge": "Program",
+      "day": "Gün {{number}}",
+      "exercise": "Hareket",
+      "dose": "Set × tekrar",
+      "rest": "Dinlenme",
+      "restValue": "{{seconds}} sn",
+      "frequency": "Sıklık",
+      "length": "Seans",
+      "duration": "Süre",
+      "perWeek_one": "Haftada {{count}} gün",
+      "perWeek_other": "Haftada {{count}} gün",
+      "minutes_one": "{{count}} dk",
+      "minutes_other": "{{count}} dk",
+      "weeks_one": "{{count}} hafta",
+      "weeks_other": "{{count}} hafta",
+      "progression": "İlerleme",
+      "cautions": "Dikkat",
+      "fileSuffix": "program"
+    },
+    "sheet": {
+      "title": "PDF raporu",
+      "session": "{{date}} test oturumu",
+      "description": "Rapor sporcunun okuyacağı dille hazırlanır; paylaşım penceresinden WhatsApp, e-posta ya da dosyalara gönderebilirsiniz.",
+      "photos": "Fotoğrafları ekle",
+      "photosHint": "Ön / yan ölçüm fotoğrafları",
+      "noPhotos": "Bu oturumda fotoğraf yok",
+      "program": "Son programı ekle",
+      "noProgram": "Kayıtlı program yok",
+      "create": "PDF oluştur ve paylaş",
+      "error": "PDF oluşturulamadı. Tekrar deneyin."
+    }
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "language": "Dil",
+    "version": "DeepTrainer {{version}}",
+    "coach": {
+      "title": "Antrenör",
+      "name": "Adınız",
+      "namePlaceholder": "Örn. Kamil Atik",
+      "organization": "Salon / kulüp",
+      "organizationPlaceholder": "Örn. DeepSport Studio",
+      "hint": "PDF raporlarının başlığında görünür."
+    },
+    "watch": {
+      "title": "Saat",
+      "connect": "Saat bağla",
+      "connected": "Bağlı · dokunup bağlantıyı kesin",
+      "hint": "Kondisyon testinde canlı nabız ve toparlanma",
+      "footer": "Standart Bluetooth nabız yayını: Garmin, Polar, Coros, Suunto, Wahoo saatleri ve göğüs bantları."
+    },
+    "theme": {
+      "title": "Tema",
+      "system": "Sistem",
+      "light": "Açık",
+      "dark": "Koyu",
+      "navy": "Koyu lacivert"
+    },
+    "data": {
+      "title": "Veriler",
+      "footer": "Veriler bu cihazda saklanır.",
+      "demo": "Örnek sporcular ekle",
+      "demoHint": "İrem, Yunus, Deniz (geliştirme)",
+      "clear": "Bütün verileri sil",
+      "clearConfirm": {
+        "title": "Bütün veriler silinsin mi?",
+        "description": "Sporcular, testler ve programlar bu cihazdan kalıcı olarak silinir."
+      }
+    }
+  }
+}

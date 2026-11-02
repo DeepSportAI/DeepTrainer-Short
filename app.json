@@ -1,0 +1,163 @@
+{
+  "expo": {
+    "name": "DeepTrainer",
+    "slug": "DeepTrainerShort",
+    "version": "1.0.0",
+    "orientation": "default",
+    "icon": "./assets/images/icon.png",
+    "scheme": "deeptrainershort",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "bundleIdentifier": "com.deepsport.deeptrainershort",
+      "supportsTablet": true,
+      "buildNumber": "1",
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.deepsport.deeptrainershort",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#112555",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "server",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#F0F2F5",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 96,
+          "dark": {
+            "backgroundColor": "#000103",
+            "image": "./assets/images/splash-icon-dark.png"
+          }
+        }
+      ],
+      "expo-sqlite",
+      "expo-video",
+      [
+        "expo-localization",
+        {
+          "supportedLocales": {
+            "ios": [
+              "tr",
+              "en"
+            ]
+          }
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Sporcunun ölçüm fotoğrafını (ön / yan) eklemek için fotoğraflarınıza erişilir.",
+          "cameraPermission": "Sporcunun ölçüm fotoğrafını (ön / yan) çekmek için kamera kullanılır.",
+          "microphonePermission": false
+        }
+      ],
+      [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "Notları ve program isteğini sesle yazdırmak için mikrofon kullanılır.",
+          "speechRecognitionPermission": "Söylediklerinizi yazıya çevirmek için konuşma tanıma kullanılır."
+        }
+      ],
+      [
+        "react-native-ble-plx",
+        {
+          "isBackgroundEnabled": false,
+          "modes": [],
+          "bluetoothAlwaysPermission": "Sporcunun saatinden ya da göğüs bandından test sırasında nabız okumak için Bluetooth kullanılır."
+        }
+      ],
+      [
+        "expo-font",
+        {
+          "android": {
+            "fonts": [
+              {
+                "fontFamily": "Barlow",
+                "fontDefinitions": [
+                  {
+                    "path": "./assets/fonts/Barlow-Regular.ttf",
+                    "weight": 400
+                  },
+                  {
+                    "path": "./assets/fonts/Barlow-Italic.ttf",
+                    "weight": 400,
+                    "style": "italic"
+                  },
+                  {
+                    "path": "./assets/fonts/Barlow-Medium.ttf",
+                    "weight": 500
+                  },
+                  {
+                    "path": "./assets/fonts/Barlow-SemiBold.ttf",
+                    "weight": 600
+                  },
+                  {
+                    "path": "./assets/fonts/Barlow-Bold.ttf",
+                    "weight": 700
+                  },
+                  {
+                    "path": "./assets/fonts/Barlow-BoldItalic.ttf",
+                    "weight": 700,
+                    "style": "italic"
+                  },
+                  {
+                    "path": "./assets/fonts/Barlow-ExtraBold.ttf",
+                    "weight": 800
+                  }
+                ]
+              },
+              {
+                "fontFamily": "Barlow Semi Condensed",
+                "fontDefinitions": [
+                  {
+                    "path": "./assets/fonts/BarlowSemiCondensed-SemiBold.ttf",
+                    "weight": 600
+                  },
+                  {
+                    "path": "./assets/fonts/BarlowSemiCondensed-Bold.ttf",
+                    "weight": 700
+                  },
+                  {
+                    "path": "./assets/fonts/BarlowSemiCondensed-ExtraBold.ttf",
+                    "weight": 800
+                  }
+                ]
+              }
+            ]
+          },
+          "ios": {
+            "fonts": [
+              "./assets/fonts/Barlow-Regular.ttf",
+              "./assets/fonts/Barlow-Italic.ttf",
+              "./assets/fonts/Barlow-Medium.ttf",
+              "./assets/fonts/Barlow-SemiBold.ttf",
+              "./assets/fonts/Barlow-Bold.ttf",
+              "./assets/fonts/Barlow-BoldItalic.ttf",
+              "./assets/fonts/Barlow-ExtraBold.ttf",
+              "./assets/fonts/BarlowSemiCondensed-SemiBold.ttf",
+              "./assets/fonts/BarlowSemiCondensed-Bold.ttf",
+              "./assets/fonts/BarlowSemiCondensed-ExtraBold.ttf"
+            ]
+          }
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}

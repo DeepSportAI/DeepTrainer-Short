@@ -1,0 +1,278 @@
+@import 'tailwindcss';
+@import 'uniwind';
+
+/*
+ * DeepTrainer — tasarım token'ları (TEK KAYNAK)
+ *
+ * DeepSport Atletik'in token bloğunun AYNISI (aynı rol adları, aynı değerler; Kamil, 2 Kasım 2026: "DeepSport atletik
+ * alt yapısıyla aynı olacak"). Atletik'te palet değişirse bu blok da aynı değerlerle güncellenir. Uygulamada hiçbir yere
+ * renk gömülmez; her şey `bg-card`, `text-muted-foreground` gibi sınıflardan okur.
+ *
+ * ROLLER:
+ *   - `primary` (volt) iki temada da DOLGU: birincil düğme, seçili sekme / çip / segment, ortadaki "Test al",
+ *     kahraman kart vurgusu. Üstündeki yazı ve simge daima `primary-foreground`. `text-primary` yasak (beyazda 1,2:1).
+ *   - `interactive` YAZI ve SİMGE vurgusu: bağlantı, vurgulu simge, odaklı alan kenarı.
+ *   - `data` grafik: halka, ilerleme çubuğu, çizgi, nabız eğrisi.
+ *   - `success` / `warning` / `destructive` ve `level-1…5` merdiveni durum bildirir (zayıf → iyi, zorluk).
+ *
+ * Yorumlardaki hex'ler GERÇEKTE BASILAN değerlerdir. PDF raporu (`features/reports/pdf-theme.ts`) kâğıda hep açık
+ * temayla basılır ve bu bloğun AÇIK değerlerini hex olarak taşır — renk değeri görülen tek yer orasıdır.
+ *
+ * ÜÇ BLOK: `light` (N2-L), `dark` (N3-D) ve seçimle gelen `navy` ("Koyu lacivert", N2-D). Bir rol eklenince ÜÇ
+ * bloğa da yazılır.
+ */
+@layer theme {
+  :root {
+    @variant light {
+      /* N2-L · Volt + mürekkep lacivert */
+      --color-background: oklch(0.955 0.012 266);   /* #ecf0f9 lacivert tonlu açık zemin */
+      --color-foreground: oklch(0.2 0.04 266);      /* #0d1528 lacivert mürekkep */
+      --color-card: oklch(1 0 0);                   /* #ffffff */
+      --color-card-foreground: oklch(0.2 0.04 266);
+
+      /* Volt DOLGU (iki temada aynı) ve üstündeki koyu yazı — 16,2:1 */
+      --color-primary: oklch(0.925 0.205 121);      /* #d3fa3c */
+      --color-primary-foreground: oklch(0.2 0.03 125); /* #131809 */
+      /* Yazı / simge vurgusu — kartta 13,9:1 */
+      --color-interactive: oklch(0.3 0.1 266);      /* #16295f mürekkep lacivert */
+      --color-interactive-foreground: oklch(1 0 0);
+      /* Grafik: halka, ilerleme, çizgi, radar */
+      --color-data: oklch(0.3 0.1 266);             /* #16295f */
+      /* Tam logo (`BrandLogo`): açık temada lacivert, koyu temada beyaz. Vurgu değil, logonun kendi ikilisi. */
+      --color-brand: oklch(0.28 0.09 264);          /* #112555 — logonun lacivert'i, palette bağlı değil */
+      /*
+       * Kahraman kart (sporcu Bugün'ündeki "Bugünkü antrenman", Branşım başlığı, tasarım S17N): açık temada
+       * mürekkep lacivert zemin + beyaz yazı, koyu temada bir kademe açık yüzey (`surface-3`) + açık yazı. Düğmesi
+       * iki temada da VOLT dolgu (S00C3: volt = dolgu). `interactive` koyuda açık mavi olduğu için zemin
+       * olamaz — ayrı rol.
+       */
+      --color-hero: oklch(0.3 0.1 266);             /* #16295f */
+      --color-hero-foreground: oklch(1 0 0);
+      --color-hero-action: oklch(0.925 0.205 121);  /* #d3fa3c */
+      --color-hero-action-foreground: oklch(0.2 0.03 125);
+
+      --color-muted: oklch(0.968 0.008 266);        /* = surface-2 */
+      --color-muted-foreground: oklch(0.47 0.035 266); /* #525b6f */
+      --color-border: oklch(0.895 0.016 266);       /* #d7dce7 */
+      --color-input: oklch(0.83 0.02 266);          /* #c1c7d5 */
+      --color-ring: oklch(0.3 0.1 266);
+
+      /* Katmanlar: 1 = örtü/kenar, 2 = iç paneller, 3 = kontroller, bar = alt eylem çubuğu */
+      --color-surface-1: oklch(1 0 0);
+      --color-surface-2: oklch(0.968 0.008 266);    /* #f2f4fa */
+      --color-surface-3: oklch(0.925 0.014 266);    /* #e2e6f0 */
+      --color-surface-bar: oklch(1 0 0);
+
+      /* Anlamsal renkler — vurgudan AYRIDIR, durum bildirir; simge, nokta, çerçeve (kartta ≥ 3) */
+      --color-success: oklch(0.52 0.105 165);       /* #107c5a */
+      --color-success-foreground: oklch(1 0 0);
+      --color-warning: oklch(0.62 0.13 65);         /* #bb731b */
+      --color-warning-foreground: oklch(0.2 0.04 266);
+      --color-destructive: oklch(0.54 0.2 25);      /* #c9222b */
+      --color-destructive-foreground: oklch(1 0 0);
+
+      /*
+       * Değerlendirme merdiveni — Çok Zayıf → Çok İyi. Beş kademe, sıralı bir ölçek (iyi/kötü üçlüsü
+       * yetmiyor, aradaki iki kademe kendi rengini istiyor). Volt ile karışmasın diye lime'ı atlar.
+       */
+      --color-level-1: oklch(0.6 0.2 25);           /* #de3b3d kırmızı */
+      --color-level-2: oklch(0.7 0.16 52);          /* #ea7d2e turuncu */
+      --color-level-3: oklch(0.8 0.15 88);          /* #e6b731 sarı */
+      --color-level-4: oklch(0.6 0.15 152);         /* #1a9951 yeşil */
+      --color-level-5: oklch(0.6 0.1 205);          /* #0f919c camgöbeği */
+
+      /*
+       * Vurgu parıltısı. Açık temada TAMAMEN SAYDAM: bir hale beyaz zeminde is lekesi gibi durur.
+       * Bileşenler tema sormaz; "parıltı yalnız koyu temada" kuralını token'ın kendisi taşır.
+       */
+      --color-glow: oklch(0.3 0.1 266 / 0%);
+
+      /*
+       * Örtü (alttan sayfanın arkası) ve gölge. Durum bildirmezler, anlamsal rolleri yoktur. Bu yüzden vurgu ve
+       * anlamsal renklerden ayrı bir ad alanındalar ve `useCSSVariable` ile okunurlar (gölge rengi className
+       * kabul etmez). Eski ortam katmanı (giriş ekranındaki üç bulanık daire, `ambient-1…3`) kalktı: yeni
+       * tasarımda zemin düz `background` (Kamil, 22 Ekim).
+       */
+      --color-scrim: oklch(0.15 0.02 252 / 45%);
+      --color-shadow: oklch(0.15 0.02 252 / 22%);
+
+      /*
+       * Kamera katmanı (test alımı) — HEP KOYU, tema değişmez: web'deki test-alımı tema kilidinin
+       * karşılığı. Kurgu §05 katman renkleri: beklemede / henüz değil / etkin / doğrulandı / engel.
+       * İki temada aynı değerler; bileşenler bu katmanda tema sormaz.
+       */
+      --color-overlay-ink: oklch(0.95 0 0);
+      --color-overlay-base: oklch(0.07 0.015 252);       /* kamera zemini — yatay kadrajın çevresi */
+      --color-overlay-scrim: oklch(0.05 0.015 252 / 82%);
+      --color-overlay-guide: oklch(0.75 0.11 252);       /* mavi — kılavuz, beklemede */
+      --color-overlay-pending: oklch(0.79 0.155 65);     /* amber — hedef, henüz değil */
+      --color-overlay-active: oklch(0.925 0.205 121);    /* volt — etkin, kaydediliyor */
+      --color-overlay-ok: oklch(0.78 0.19 152);          /* yeşil — doğrulandı */
+      --color-overlay-fail: oklch(0.704 0.191 22.2);     /* kırmızı — engel, koptu */
+      --color-overlay-active-foreground: oklch(0.2 0.03 125); /* volt dolgu üstündeki yazı / simge */
+      --color-overlay-surface: oklch(0.17 0.012 252);   /* kamera üstündeki alttan sayfa (kamera ayarları, çıkış) */
+    }
+
+    @variant dark {
+      /* N3-D · Volt + elektrik mavisi, siyaha yakın mürekkep zemin */
+      --color-background: oklch(0.165 0.012 265);   /* #0c0e14 */
+      --color-foreground: oklch(0.97 0.004 265);    /* #f4f5f8 */
+      --color-card: oklch(0.235 0.016 265);         /* #1a1e26 */
+      --color-card-foreground: oklch(0.97 0.004 265);
+
+      --color-primary: oklch(0.925 0.205 121);      /* #d3fa3c volt dolgu */
+      --color-primary-foreground: oklch(0.2 0.03 125); /* #131809 */
+      --color-interactive: oklch(0.72 0.145 256);   /* #64a6fe elektrik mavisi — yazı / simge vurgusu */
+      --color-interactive-foreground: oklch(0.16 0.02 265); /* #090d16 */
+      --color-data: oklch(0.68 0.17 258);           /* #5097ff grafik */
+      --color-brand: oklch(1 0 0);
+      --color-hero: oklch(0.3 0.018 265);           /* #292e37 = surface-3 */
+      --color-hero-foreground: oklch(0.97 0.004 265);
+      --color-hero-action: oklch(0.925 0.205 121);  /* #d3fa3c */
+      --color-hero-action-foreground: oklch(0.2 0.03 125);
+
+      --color-muted: oklch(0.265 0.017 265);        /* = surface-2 */
+      --color-muted-foreground: oklch(0.76 0.015 265); /* #acb1bb */
+      --color-border: oklch(0.325 0.018 265);       /* #30343e */
+      --color-input: oklch(0.4 0.02 265);           /* #424853 */
+      --color-ring: oklch(0.72 0.145 256);
+
+      --color-surface-1: oklch(0.2 0.014 265);      /* zemin ile kart arası */
+      --color-surface-2: oklch(0.265 0.017 265);    /* #21252e */
+      --color-surface-3: oklch(0.3 0.018 265);      /* #292e37 */
+      --color-surface-bar: oklch(0.235 0.016 265);
+
+      --color-success: oklch(0.76 0.16 150);        /* #58cd78 */
+      --color-success-foreground: oklch(0.16 0.02 265);
+      --color-warning: oklch(0.82 0.14 70);         /* #feb354 */
+      --color-warning-foreground: oklch(0.16 0.02 265);
+      --color-destructive: oklch(0.68 0.2 25);      /* #fc5855 */
+      /* Koyu temada kırmızı açık: üstünde koyu yazı 6,2:1 (beyaz 3,2 kalırdı) */
+      --color-destructive-foreground: oklch(0.16 0.02 265);
+
+      /* Merdiven koyu zeminde bir tık açılıyor; aynı sıra, aynı ayrım, okunur kontrast. */
+      --color-level-1: oklch(0.68 0.19 25);         /* #f75d59 */
+      --color-level-2: oklch(0.77 0.15 55);         /* #fc984c */
+      --color-level-3: oklch(0.87 0.15 92);         /* #f8d14f */
+      --color-level-4: oklch(0.76 0.16 150);        /* #58cd78 */
+      --color-level-5: oklch(0.8 0.11 195);         /* #57d4d4 */
+
+      /* Volt hale — yalnız koyu temada (kartta ≈#60712e) */
+      --color-glow: oklch(0.925 0.205 121 / 38%);
+
+      --color-scrim: oklch(0.05 0.015 252 / 72%);
+      --color-shadow: oklch(0 0 0 / 60%);
+
+      /*
+       * Kamera katmanı (test alımı) — HEP KOYU, tema değişmez: web'deki test-alımı tema kilidinin
+       * karşılığı. Kurgu §05 katman renkleri: beklemede / henüz değil / etkin / doğrulandı / engel.
+       * İki temada aynı değerler; bileşenler bu katmanda tema sormaz.
+       */
+      --color-overlay-ink: oklch(0.95 0 0);
+      --color-overlay-base: oklch(0.07 0.015 252);       /* kamera zemini — yatay kadrajın çevresi */
+      --color-overlay-scrim: oklch(0.05 0.015 252 / 82%);
+      --color-overlay-guide: oklch(0.75 0.11 252);       /* mavi — kılavuz, beklemede */
+      --color-overlay-pending: oklch(0.79 0.155 65);     /* amber — hedef, henüz değil */
+      --color-overlay-active: oklch(0.925 0.205 121);    /* volt — etkin, kaydediliyor */
+      --color-overlay-ok: oklch(0.78 0.19 152);          /* yeşil — doğrulandı */
+      --color-overlay-fail: oklch(0.704 0.191 22.2);     /* kırmızı — engel, koptu */
+      --color-overlay-active-foreground: oklch(0.2 0.03 125); /* volt dolgu üstündeki yazı / simge */
+      --color-overlay-surface: oklch(0.17 0.012 252);   /* kamera üstündeki alttan sayfa (kamera ayarları, çıkış) */
+    }
+
+    /*
+     * N2-D · Volt + mürekkep lacivert, KOYU (Kamil, 22 Ekim: "bu temaları da sistemin içine seçim yapabilmek için
+     * koysana, profilden seçelim"). Seçimle gelen ikinci koyu tema "Koyu lacivert": Profil › Ayarlar › Tema. Sistem
+     * bunu hiç seçmez (sistem koyu = N3). Uniwind özel teması (`metro.config.js` → `extraThemes`); geçiş
+     * `features/settings/theme-store.ts`, JS tarafı `useColorTokens` aynı bloktan okur. Değişken kümesi öteki iki
+     * blokla AYNI olmak zorunda (Uniwind derlemede, `verify:theme` burada denetler).
+     * Roller N2-D'nin kendisi: volt hem dolgu (`primary`) hem koyu zeminde yazı / simge vurgusu (`interactive`) ve
+     * grafik (`data`). `text-primary` yasağı burada da geçerli (sınıf temadan bağımsız denetlenir).
+     */
+    @variant navy {
+      --color-background: oklch(0.19 0.05 268);     /* #0a122a lacivert gece */
+      --color-foreground: oklch(0.97 0.004 266);    /* #f4f5f8 */
+      --color-card: oklch(0.255 0.056 268);         /* #17213e */
+      --color-card-foreground: oklch(0.97 0.004 266);
+
+      --color-primary: oklch(0.925 0.205 121);      /* #d3fa3c volt dolgu */
+      --color-primary-foreground: oklch(0.2 0.03 125); /* #131809 */
+      --color-interactive: oklch(0.925 0.205 121);  /* #d3fa3c volt yazı / simge — kartta 13,2:1 */
+      --color-interactive-foreground: oklch(0.2 0.03 125);
+      --color-data: oklch(0.925 0.205 121);         /* #d3fa3c grafik */
+      --color-brand: oklch(1 0 0);
+      --color-hero: oklch(0.32 0.056 268);          /* #263150 = surface-3 */
+      --color-hero-foreground: oklch(0.97 0.004 266);
+      --color-hero-action: oklch(0.925 0.205 121);  /* #d3fa3c */
+      --color-hero-action-foreground: oklch(0.2 0.03 125);
+
+      --color-muted: oklch(0.285 0.056 268);        /* = surface-2 */
+      --color-muted-foreground: oklch(0.78 0.03 266); /* #aeb7cb — kartta 7,9:1 */
+      --color-border: oklch(0.345 0.055 268);       /* #2d3856 */
+      --color-input: oklch(0.42 0.05 268);          /* #414c69 */
+      --color-ring: oklch(0.925 0.205 121);
+
+      --color-surface-1: oklch(0.222 0.053 268);    /* #101934 zemin ile kart arası */
+      --color-surface-2: oklch(0.285 0.056 268);    /* #1e2846 */
+      --color-surface-3: oklch(0.32 0.056 268);     /* #263150 */
+      --color-surface-bar: oklch(0.255 0.056 268);
+
+      --color-success: oklch(0.76 0.14 165);        /* #40cd9b */
+      --color-success-foreground: oklch(0.16 0.04 268);
+      --color-warning: oklch(0.82 0.14 70);         /* #feb354 */
+      --color-warning-foreground: oklch(0.16 0.04 268);
+      --color-destructive: oklch(0.68 0.2 25);      /* #fc5855 */
+      --color-destructive-foreground: oklch(0.16 0.04 268); /* #060c1e — 6,2:1 */
+
+      --color-level-1: oklch(0.68 0.19 25);         /* #f75d59 */
+      --color-level-2: oklch(0.77 0.15 55);         /* #fc984c */
+      --color-level-3: oklch(0.87 0.15 92);         /* #f8d14f */
+      --color-level-4: oklch(0.75 0.16 152);        /* #4eca7a */
+      --color-level-5: oklch(0.78 0.12 200);        /* #3aced6 */
+
+      --color-glow: oklch(0.925 0.205 121 / 40%);
+
+      --color-scrim: oklch(0.05 0.015 252 / 72%);
+      --color-shadow: oklch(0 0 0 / 60%);
+
+      /* Kamera katmanı — hep koyu, üç temada aynı. */
+      --color-overlay-ink: oklch(0.95 0 0);
+      --color-overlay-base: oklch(0.07 0.015 252);
+      --color-overlay-scrim: oklch(0.05 0.015 252 / 82%);
+      --color-overlay-guide: oklch(0.75 0.11 252);
+      --color-overlay-pending: oklch(0.79 0.155 65);
+      --color-overlay-active: oklch(0.925 0.205 121);
+      --color-overlay-ok: oklch(0.78 0.19 152);
+      --color-overlay-fail: oklch(0.704 0.191 22.2);
+      --color-overlay-active-foreground: oklch(0.2 0.03 125);
+      --color-overlay-surface: oklch(0.17 0.012 252);
+    }
+  }
+}
+
+/*
+ * Yazı tipleri (F1, 22 Ekim 2026) — renklerle aynı kural: aile adı YALNIZ burada.
+ *
+ * `--font-sans` bütün metin (Barlow). Bileşenler `font-sans` yazmaz: `components/ui/text` ve
+ * `components/ui/text-input` sarmalayıcıları ekler, Rusçada eklemez (Barlow'da Kiril yok, metin
+ * platform yazı tipinde kalır). `--font-num` büyük sayı gösterimleri (Barlow Semi Condensed); `font-num`
+ * sınıfı eşit genişlikli rakamı da açar, ayrıca `tabular-nums` yazılmaz. Rakamlar Rusçada da
+ * Barlow Semi Condensed'tır, o yüzden `font-num` metni sayıdır (değer, kısa birim); cümle ya da
+ * "Girilmedi" gibi bir yazı taşımaz, birim adı iç içe ayrı metin olur (o da metin ailesine döner).
+ *
+ * Ağırlıklar: Barlow 400 · 400 italik · 500 · 600 · 700 · 700 italik · 800; Barlow Semi Condensed
+ * 600 · 700 · 800 (sayılar kalın). 900 (`font-black`) en yakın dosyaya, 800'e düşer; `font-num`
+ * 600'den ince yazılırsa yine 600 basılır — ince sayı gerekirse dosya eklenir.
+ *
+ * Dosyalar `assets/fonts/` (OFL lisansı yanında), native kayıt `app.json` → `expo-font` (aile adı +
+ * ağırlık başına dosya; yazı tipi değişikliği yeni native derleme ister). `static`: değişkenler sınıf
+ * kullanılmasa da üretilir; sınıf almayan native alanlar `lib/theme/fonts` üzerinden okur.
+ */
+@theme static {
+  --font-sans: 'Barlow';
+  --font-num: 'Barlow Semi Condensed';
+}
+
+@utility font-num {
+  font-variant-numeric: tabular-nums;
+}
