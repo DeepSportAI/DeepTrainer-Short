@@ -1,13 +1,17 @@
-import { emptyAssessment, type Assessment } from '@/features/assessment/model';
+import { emptyAssessment, type Assessment, type HeartRateSummary } from '@/features/assessment/model';
 import type { Athlete } from '@/features/athletes/model';
+import type { Goal, GoalCheckin } from '@/features/goals/model';
+import type { GoalMetricId } from '@/features/goals/metrics';
 import type { Program } from '@/features/programs/model';
 import type { PlanExercise, ProgramPlan } from '@/features/programs/schema';
 import { store } from '@/lib/db/store';
 
 /**
  * Geliştirme demosu (yalnız `__DEV__`, Ayarlar › Veriler): akışı boş uygulamada denemek için üç sporcu — Kamil'in
- * notlarındaki örneklerle: İrem (değerlendirmesi tamam, bel boşluğu / lordoz, core zayıf, 1 dk burpee 9; elle yazılmış
- * örnek programıyla), Yunus (test yarıda) ve hiç test olmamış Deniz.
+ * notlarındaki örneklerle: İrem (31 gün önce ilk test: bel boşluğu / lordoz, core zayıf, 1 dk burpee 9; 8 haftalık
+ * hedefler ve elle yazılmış örnek program; 3 gün önce ara test — karşılaştırma, hedef gidişatı ve rapor grafikleri
+ * dolu görünsün diye hedeflerin biri yolunda, biri dikkat, biri geride, biri ulaşılmış), Yunus (test yarıda) ve hiç
+ * test olmamış Deniz.
  */
 const DAY = 86_400_000;
 
@@ -77,7 +81,7 @@ export async function seedDemoData(now: number = Date.now()): Promise<void> {
   const yunus = athlete('demo_yunus', 'Yunus', 'Demir', { gender: 'male', birthYear: 1992, heightCm: 181, weightKg: 84 }, now - 9 * DAY);
   const deniz = athlete('demo_deniz', 'Deniz', 'Kaya', { gender: 'male', birthYear: 2001, heightCm: 176 }, now - DAY);
 
-  const at = now - 3 * DAY;
+  const at = now - 31 * DAY;
   const iremSession: Assessment = {
     ...emptyAssessment('demo_as_irem', irem.id, at - 40 * 60_000),
     completedAt: at,
@@ -102,6 +106,57 @@ export async function seedDemoData(now: number = Date.now()): Promise<void> {
     },
   };
 
+  // Ara test (4. hafta): core toparlandı, bel boşluğu sürüyor, kondisyon geride; goblet squat'ta yeni bulgu.
+  const re = now - 3 * DAY;
+  const iremRetest: Assessment = {
+    ...emptyAssessment('demo_as_irem_2', irem.id, re - 40 * 60_000),
+    completedAt: re,
+    updatedAt: re,
+    intro: { experience: 'occasional', experienceNote: 'Haftada 3 gün antrenman', pain: true, painRegions: ['lowerBack'], painNote: 'Daha seyrek, sabahları', goals: ['fatLoss', 'conditioning'], note: '', completedAt: re - 38 * 60_000 },
+    results: {
+      airSquat: { checks: { kneeValgus: false, heelLift: false, lumbarCollapse: false }, metric: null, note: '', completedAt: re - 35 * 60_000 },
+      hipHinge: { checks: { backRounding: false, hipsNotBack: false }, metric: null, note: '', completedAt: re - 33 * 60_000 },
+      overheadReach: { checks: { lumbarArch: true, shouldersForward: false }, metric: null, note: 'Bel boşluğu azaldı ama var', completedAt: re - 31 * 60_000 },
+      plank: { checks: { hipSag: false, shaking: true }, metric: 34, note: '', completedAt: re - 29 * 60_000 },
+      gobletSquat: { checks: { shallowDepth: true, balanceLoss: false, kneeHipMisalign: false }, metric: null, note: 'Yük artınca derinlik kısaldı', completedAt: re - 24 * 60_000 },
+      pushUp: { checks: { hipDrop: false, elbowControl: true, neckPosition: false }, metric: 8, note: '', completedAt: re - 21 * 60_000 },
+      dumbbellRow: { checks: { shoulderShrug: false, backInactive: false }, metric: null, note: '', completedAt: re - 18 * 60_000 },
+      conditioning: { checks: { heavyBreathing: true, tempoDrop: false }, metric: 10, option: 'burpee', note: '', completedAt: re - 10 * 60_000, heartRate: demoHeartRate() },
+    },
+    measurements: { weightKg: 62.1, waistCm: 75, heightCm: 165, restingHr: 67, photoFront: null, photoSide: null, completedAt: re - 5 * 60_000 },
+    evaluation: {
+      levels: { core: 'medium', glute: 'medium', upperBack: 'medium', conditioning: 'weak' },
+      priority: 'conditioning',
+      priorityNote: 'Kondisyon geride; haftaya bir kısa interval günü',
+      coachNote: 'Core kontrolün belirgin arttı, şınavda kalça artık düşmüyor. Kondisyon hedefinin gerisindeyiz; bel çevresi de yavaş iniyor.',
+    },
+  };
+
+  // 8 haftalık hedefler (ilk testten), 14 günde bir ara ölçüm; 2. haftada ara ölçümler girilmiş.
+  const deadline = at + 56 * DAY;
+  const check = (value: number, day: number, note = ''): GoalCheckin => ({ id: `demo_ci_${day}_${value}`, value, at: at + day * DAY, note });
+  const goal = (metric: GoalMetricId, startValue: number, target: number, checkins: GoalCheckin[]): Goal => ({
+    id: `demo_goal_${metric}`,
+    athleteId: irem.id,
+    metric,
+    startValue,
+    startAt: at,
+    target,
+    deadline,
+    checkEveryDays: 14,
+    sourceAssessmentId: iremSession.id,
+    checkins,
+    createdAt: at + 30 * 60_000,
+    updatedAt: at + 14 * DAY,
+  });
+  const goals = [
+    goal('pushUp', 4, 12, [check(6, 14)]),
+    goal('plank', 22, 45, [check(28, 14)]),
+    goal('waist', 76, 72, [check(75.5, 14)]),
+    goal('burpee', 9, 15, [check(9, 14, 'Haftada bir kondisyon günü kaçtı')]),
+    goal('level.core', 0, 1, []),
+  ];
+
   const started = now - 2 * 60 * 60_000;
   const yunusSession: Assessment = {
     ...emptyAssessment('demo_as_yunus', yunus.id, started),
@@ -125,6 +180,26 @@ export async function seedDemoData(now: number = Date.now()): Promise<void> {
   };
 
   for (const doc of [irem, yunus, deniz]) await store.put('athletes', doc);
-  for (const doc of [iremSession, yunusSession]) await store.put('assessments', doc);
+  for (const doc of [iremSession, iremRetest, yunusSession]) await store.put('assessments', doc);
   await store.put('programs', program);
+  for (const doc of goals) await store.put('goals', doc);
+}
+
+/** 1 dk burpee + 60 sn toparlanma, 2 sn'de bir örnek: 98 → 171 bpm, bitişten 60 sn sonra 153 (toparlanma 18). */
+function demoHeartRate(): HeartRateSummary {
+  const samples: [number, number][] = [];
+  for (let sec = 0; sec <= 120; sec += 2) {
+    const bpm = sec <= 60 ? 98 + 73 * Math.sin((sec / 60) * (Math.PI / 2)) : 171 - 18 * Math.sqrt((sec - 60) / 60);
+    samples.push([sec, Math.round(bpm + (sec % 6 === 0 ? 1 : 0))]);
+  }
+  const values = samples.map(([, bpm]) => bpm);
+  return {
+    deviceName: 'DEMO',
+    avg: Math.round(values.slice(0, 31).reduce((sum, v) => sum + v, 0) / 31),
+    max: Math.max(...values),
+    min: Math.min(...values),
+    recovery60: 18,
+    endAt: 60,
+    samples,
+  };
 }

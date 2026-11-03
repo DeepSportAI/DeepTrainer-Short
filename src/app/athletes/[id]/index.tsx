@@ -20,10 +20,14 @@ import { recommendNext } from '@/features/assessment/recommend';
 import { AthleteHeader, PillTabs } from '@/features/athletes/components/athlete-header';
 import { ageOf, bmiOf, fullName, initials } from '@/features/athletes/model';
 import { useAthlete } from '@/features/athletes/queries';
+import { GoalsTab } from '@/features/goals/components/goals-tab';
+import { goalView } from '@/features/goals/model';
+import { useAthleteGoals } from '@/features/goals/queries';
 import { ProgramsTab } from '@/features/programs/components/programs-tab';
 import { useAthletePrograms } from '@/features/programs/queries';
 import { ReportSheet } from '@/features/reports/components/report-sheet';
 import { useShareAssessmentReport } from '@/features/reports/use-reports';
+import { useNow } from '@/hooks/use-now';
 import { formatAgo } from '@/lib/format/ago';
 import { formatShortDate } from '@/lib/format/date';
 import { formatDecimal } from '@/lib/format/quantity';
@@ -31,7 +35,8 @@ import { CONTENT_MAX } from '@/lib/layout/breakpoints';
 import { useTabBarPosition } from '@/lib/layout/use-layout';
 import { useColorTokens } from '@/lib/theme/tokens';
 
-type Tab = 'analysis' | 'history' | 'programs';
+type Tab = 'analysis' | 'goals' | 'history' | 'programs';
+const TABS: readonly Tab[] = ['analysis', 'goals', 'history', 'programs'];
 
 /**
  * Sporcunun analiz sayfası (ana sayfadaki karttan açılır; Kamil, 2 Kasım 2026: "ana sayfadan tıkla detaya git, detay
@@ -45,7 +50,7 @@ export default function AthleteDetailRoute() {
   const tabBarShown = useTabBarPosition() === 'bottom';
   const { id, tab: initialTab } = useLocalSearchParams<{ id: string; tab?: string }>();
   const athleteId = id ?? '';
-  const [tab, setTab] = useState<Tab>(initialTab === 'programs' || initialTab === 'history' ? initialTab : 'analysis');
+  const [tab, setTab] = useState<Tab>(TABS.includes(initialTab as Tab) ? (initialTab as Tab) : 'analysis');
   const [menuOpen, setMenuOpen] = useState(false);
   const [reportOpen, setReportOpen] = useState(false);
   const [interactive] = useColorTokens(['interactive']);
@@ -53,12 +58,18 @@ export default function AthleteDetailRoute() {
   const athlete = useAthlete(athleteId);
   const assessments = useAthleteAssessments(athleteId);
   const programs = useAthletePrograms(athleteId);
+  const goals = useAthleteGoals(athleteId);
+  const now = useNow();
   const start = useStartAssessment();
   const report = useShareAssessmentReport();
 
   const view = useMemo(
     () => analysisView(assessments.data ?? [], athlete.data?.gender ?? null),
     [assessments.data, athlete.data?.gender],
+  );
+  const goalViews = useMemo(
+    () => (goals.data ?? []).map((goal) => goalView(goal, assessments.data ?? [], now)),
+    [goals.data, assessments.data, now],
   );
 
   if (!athlete.data) {
@@ -158,11 +169,7 @@ export default function AthleteDetailRoute() {
 
           <View className="mt-3">
             <PillTabs
-              tabs={[
-                { value: 'analysis', label: t('athleteDetail.tabs.analysis') },
-                { value: 'history', label: t('athleteDetail.tabs.history') },
-                { value: 'programs', label: t('athleteDetail.tabs.programs') },
-              ]}
+              tabs={TABS.map((value) => ({ value, label: t(`athleteDetail.tabs.${value}`) }))}
               value={tab}
               onChange={setTab}
             />
@@ -177,12 +184,20 @@ export default function AthleteDetailRoute() {
               <AnalysisTab
                 view={view}
                 heightCm={person.heightCm}
+                gender={person.gender}
                 onContinue={continueSession}
                 onStart={startNew}
                 onOpenResult={(session) =>
                   router.push({ pathname: '/athletes/[id]/session/[sessionId]/result', params: { id: athleteId, sessionId: session.id } })
                 }
                 onReport={() => setReportOpen(true)}
+              />
+            ) : tab === 'goals' ? (
+              <GoalsTab
+                views={goalViews}
+                now={now}
+                canSetGoals={view.latestEvaluated !== null}
+                onSetGoals={() => router.push({ pathname: '/athletes/[id]/goals', params: { id: athleteId } })}
               />
             ) : tab === 'history' ? (
               <HistoryTab sessions={view.sessions} onOpen={openSession} onStart={startNew} />

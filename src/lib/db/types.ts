@@ -5,9 +5,9 @@
  * tutar, belge kendi `id`'sini taşır ve JSON olarak saklanır. Sorgular `features/*\/repository.ts` üzerinden
  * gelir — sunucu geldiğinde yalnız depolar değişir, ekranlar ve sorgu anahtarları yerinde kalır.
  */
-export type Collection = 'athletes' | 'assessments' | 'programs';
+export type Collection = 'athletes' | 'assessments' | 'programs' | 'goals';
 
-export const COLLECTIONS: readonly Collection[] = ['athletes', 'assessments', 'programs'];
+export const COLLECTIONS: readonly Collection[] = ['athletes', 'assessments', 'programs', 'goals'];
 
 export type DocumentStore = {
   list<T>(collection: Collection): Promise<T[]>;

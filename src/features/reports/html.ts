@@ -19,7 +19,7 @@ export function escMultiline(value: string): string {
   return esc(value).replace(/\n/g, '<br/>');
 }
 
-export function shell({ title, lang, body }: { title: string; lang: string; body: string }): string {
+export function shell({ title, lang, body, css = '' }: { title: string; lang: string; body: string; css?: string }): string {
   return `<!DOCTYPE html>
 <html lang="${esc(lang)}">
 <head>
@@ -61,6 +61,7 @@ export function shell({ title, lang, body }: { title: string; lang: string; body
   .day { page-break-inside: avoid; margin-top: 10px; }
   .section-tag { font-size: 9px; font-weight: 700; color: ${PDF.navy}; background: ${PDF.background}; border-radius: 6px; padding: 1px 6px; }
   .footer { margin-top: 22px; padding-top: 8px; border-top: 1px solid ${PDF.border}; font-size: 9px; color: ${PDF.muted}; }
+${css}
 </style>
 </head>
 <body>

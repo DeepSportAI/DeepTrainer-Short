@@ -1,4 +1,4 @@
-import { ChevronRight, Play, Sparkles } from 'lucide-react-native';
+import { ChevronRight, Flag, Play, Sparkles } from 'lucide-react-native';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Pressable, View } from 'react-native';
@@ -28,6 +28,8 @@ export type AthleteCardModel = {
   levels: { key: string; label: string; tone: Tone | null }[];
   next: { title: string; reason: string } | null;
   programCount: number;
+  /** Hedef özeti: "2 yolunda · 1 riskte", en kötü duruma göre renk; ölçüm zamanı geldiyse belirtilir. */
+  goals: { text: string; tone: 'good' | 'warn' | 'bad' | 'info'; checkDue: boolean } | null;
 };
 
 export const AthleteCard = memo(function AthleteCard({
@@ -40,7 +42,14 @@ export const AthleteCard = memo(function AthleteCard({
   onContinue: (id: string) => void;
 }) {
   const { t } = useTranslation();
-  const [muted, primaryFg] = useColorTokens(['muted-foreground', 'primary-foreground']);
+  const [muted, primaryFg, success, warning, destructive, interactive] = useColorTokens([
+    'muted-foreground',
+    'primary-foreground',
+    'success',
+    'warning',
+    'destructive',
+    'interactive',
+  ]);
 
   return (
     <View className="mb-3 overflow-hidden rounded-[24px] border border-border bg-card">
@@ -119,6 +128,20 @@ export const AthleteCard = memo(function AthleteCard({
                 <LevelBadge tone={level.tone} label={level.label} />
               </View>
             ))}
+          </View>
+        ) : null}
+
+        {card.goals ? (
+          <View className="flex-row items-center gap-2 rounded-[14px] bg-surface-2 px-3 py-2">
+            <Flag size={14} color={card.goals.tone === 'good' ? success : card.goals.tone === 'warn' ? warning : card.goals.tone === 'bad' ? destructive : interactive} strokeWidth={2.2} />
+            <Text numberOfLines={1} className="flex-1 text-[13px] font-semibold text-foreground">
+              {card.goals.text}
+            </Text>
+            {card.goals.checkDue ? (
+              <View className="rounded-full bg-warning/15 px-2 py-0.5">
+                <Text className="text-[11px] font-bold text-warning">{t('athletes.card.checkDue')}</Text>
+              </View>
+            ) : null}
           </View>
         ) : null}
 

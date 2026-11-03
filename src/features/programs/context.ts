@@ -3,15 +3,19 @@ import type { TFunction } from 'i18next';
 import { ageOf, bmiOf, fullName, type Athlete } from '@/features/athletes/model';
 import { findingsOf, type Assessment } from '@/features/assessment/model';
 import { AREAS, TESTS, TEST_IDS } from '@/features/assessment/protocol';
+import { formatGoalValue } from '@/features/goals/format';
+import type { GoalView } from '@/features/goals/model';
 import { formatClock } from '@/lib/format/clock';
+import { formatShortDate } from '@/lib/format/date';
 
 import type { ProgramPreferences } from './schema';
 
 /**
  * Sohbetin ilk mesajındaki sporcu bağlamı — değerlendirmenin okunur özeti, uygulamanın dilinde. Sporcunun adı yalnız
- * ilk adıyla gider (soyad, telefon, e-posta, fotoğraf GİTMEZ).
+ * ilk adıyla gider (soyad, telefon, e-posta, fotoğraf GİTMEZ). Açık hedefler gidişatıyla birlikte eklenir; program
+ * geride kalan hedefe ağırlık versin diye.
  */
-export function clientContext(t: TFunction, athlete: Athlete, assessment: Assessment | null): string {
+export function clientContext(t: TFunction, athlete: Athlete, assessment: Assessment | null, goals: readonly GoalView[] = []): string {
   const lines: string[] = [];
   const age = ageOf(athlete);
   lines.push(
@@ -84,6 +88,23 @@ export function clientContext(t: TFunction, athlete: Athlete, assessment: Assess
     );
     if (evaluation.priority) lines.push(`${t('assessment.result.priority')}: ${t(`assessment.priorities.${evaluation.priority}`)}${evaluation.priorityNote ? ` (${evaluation.priorityNote})` : ''}`);
     if (evaluation.coachNote) lines.push(`${t('programs.context.coachNote')}: ${evaluation.coachNote}`);
+  }
+
+  const open = goals.filter((view) => view.status !== 'achieved' && view.status !== 'missed');
+  if (open.length > 0) {
+    lines.push(`${t('programs.context.goals')}:`);
+    for (const view of open) {
+      lines.push(
+        `- ${t('programs.context.goal', {
+          metric: t(`goals.metric.${view.metric.id}`),
+          start: formatGoalValue(t, view.metric, view.goal.startValue),
+          now: formatGoalValue(t, view.metric, view.latest.value),
+          target: formatGoalValue(t, view.metric, view.goal.target),
+          date: formatShortDate(view.goal.deadline),
+          status: t(`goals.status.${view.status}`),
+        })}`,
+      );
+    }
   }
 
   return `<client_context>\n${lines.filter(Boolean).join('\n')}\n</client_context>`;

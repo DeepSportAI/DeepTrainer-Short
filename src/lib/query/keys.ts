@@ -11,4 +11,6 @@ export const queryKeys = {
   programs: ['programs'] as const,
   athletePrograms: (athleteId: string) => ['programs', 'athlete', athleteId] as const,
   program: (id: string) => ['programs', 'id', id] as const,
+  goals: ['goals'] as const,
+  athleteGoals: (athleteId: string) => ['goals', 'athlete', athleteId] as const,
 };

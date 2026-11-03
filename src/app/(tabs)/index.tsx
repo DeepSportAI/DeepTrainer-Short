@@ -15,11 +15,14 @@ import { athleteCardModel } from '@/features/assessment/athlete-card-model';
 import { hasActivity, openSession, summarizeAthlete, type Assessment } from '@/features/assessment/model';
 import { useAllAssessments } from '@/features/assessment/queries';
 import { recommendNext } from '@/features/assessment/recommend';
-import { AthleteCard } from '@/features/athletes/components/athlete-card';
+import { AthleteCard, type AthleteCardModel } from '@/features/athletes/components/athlete-card';
 import { matchesQuery } from '@/features/athletes/model';
 import { useAthletes } from '@/features/athletes/queries';
+import { goalView, summarizeGoals, type Goal } from '@/features/goals/model';
+import { useAllGoals } from '@/features/goals/queries';
 import { useAllPrograms } from '@/features/programs/queries';
 import { useDebounce } from '@/hooks/use-debounce';
+import { useNow } from '@/hooks/use-now';
 import { CONTENT_MAX } from '@/lib/layout/breakpoints';
 import { useListColumns, useTabSceneBottomInset } from '@/lib/layout/use-layout';
 import { useColorTokens } from '@/lib/theme/tokens';
@@ -50,6 +53,8 @@ export default function AthletesHome() {
   const athletes = useAthletes();
   const assessments = useAllAssessments();
   const programs = useAllPrograms();
+  const goals = useAllGoals();
+  const now = useNow();
   const [query, setQuery] = useState('');
   const debounced = useDebounce(query, 200);
   const [filter, setFilter] = useState<Filter>('all');
@@ -59,6 +64,25 @@ export default function AthletesHome() {
     for (const item of assessments.data ?? []) map.set(item.athleteId, [...(map.get(item.athleteId) ?? []), item]);
     return map;
   }, [assessments.data]);
+
+  const goalLine = useMemo(() => {
+    const map = new Map<string, AthleteCardModel['goals']>();
+    const byGoalAthlete = new Map<string, Goal[]>();
+    for (const goal of goals.data ?? []) byGoalAthlete.set(goal.athleteId, [...(byGoalAthlete.get(goal.athleteId) ?? []), goal]);
+    for (const [athleteId, list] of byGoalAthlete) {
+      const summary = summarizeGoals(list.map((goal) => goalView(goal, byAthlete.get(athleteId) ?? [], now)));
+      const parts = (['onTrack', 'atRisk', 'offTrack', 'achieved'] as const)
+        .filter((status) => summary.counts[status] > 0)
+        .map((status) => `${summary.counts[status]} ${t(`goals.status.${status}`).toLocaleLowerCase('tr')}`);
+      const worst = summary.worst;
+      map.set(athleteId, {
+        text: t('athletes.card.goals', { parts: parts.join(' · ') || t('goals.status.notStarted') }),
+        tone: worst === 'offTrack' || worst === 'missed' ? 'bad' : worst === 'atRisk' ? 'warn' : worst === 'notStarted' ? 'info' : 'good',
+        checkDue: summary.needsCheck > 0,
+      });
+    }
+    return map;
+  }, [goals.data, byAthlete, now, t]);
 
   const programCount = useMemo(() => {
     const map = new Map<string, number>();
@@ -91,7 +115,9 @@ export default function AthletesHome() {
     const rb = rank(b.id);
     return ra.open - rb.open || rb.last - ra.last || b.createdAt - a.createdAt;
   });
-  const cards = ordered.map((athlete) => athleteCardModel(t, athlete, byAthlete.get(athlete.id) ?? [], programCount.get(athlete.id) ?? 0));
+  const cards = ordered.map((athlete) =>
+    athleteCardModel(t, athlete, byAthlete.get(athlete.id) ?? [], programCount.get(athlete.id) ?? 0, goalLine.get(athlete.id) ?? null),
+  );
 
   function continueTest(athleteId: string) {
     const open = openSession(byAthlete.get(athleteId) ?? []);

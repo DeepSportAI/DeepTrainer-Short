@@ -13,6 +13,8 @@ import { sortedSessions } from '@/features/assessment/model';
 import { useAthleteAssessments } from '@/features/assessment/queries';
 import { useAthlete } from '@/features/athletes/queries';
 import { fullName } from '@/features/athletes/model';
+import { goalView } from '@/features/goals/model';
+import { useAthleteGoals } from '@/features/goals/queries';
 import { AssistantError } from '@/features/programs/api';
 import { Bubble, Composer, PreferencesPanel, ProgramPreview, TypingBubble } from '@/features/programs/components/chat-parts';
 import { clientContext, preferencesText, samePreferences } from '@/features/programs/context';
@@ -39,6 +41,7 @@ export default function ProgramChatRoute() {
   const athleteId = params.id ?? '';
   const athlete = useAthlete(athleteId);
   const assessments = useAthleteAssessments(athleteId);
+  const goals = useAthleteGoals(athleteId);
   const existing = useProgram(params.programId ?? '');
   const ask = useAskAssistant();
   const save = useSaveProgram();
@@ -87,7 +90,9 @@ export default function ProgramChatRoute() {
     const first = history.filter((item) => item.role === 'user').length === 0;
     const prefsChanged = !sentPreferences || !samePreferences(sentPreferences, preferences);
     const content = [
-      first ? clientContext(t, person, assessment) : null,
+      first
+        ? clientContext(t, person, assessment, (goals.data ?? []).map((goal) => goalView(goal, assessments.data ?? [], Date.now())))
+        : null,
       first || prefsChanged ? preferencesText(t, preferences) : null,
       text.trim(),
     ]

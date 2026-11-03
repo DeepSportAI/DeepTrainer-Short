@@ -1,5 +1,5 @@
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { CircleCheck, FileText, MessageSquarePlus, Sparkles } from 'lucide-react-native';
+import { CircleCheck, FileText, Flag, MessageSquarePlus, Sparkles } from 'lucide-react-native';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, Platform, View } from 'react-native';
@@ -175,6 +175,13 @@ export default function SessionResultRoute() {
             <Button
               shape="pill"
               glow
+              icon={Flag}
+              label={t('assessment.result.setGoals')}
+              onPress={() => after(() => router.replace({ pathname: '/athletes/[id]/goals', params: { id: athleteId, assessmentId: session.id } }))}
+            />
+            <Button
+              shape="pill"
+              variant="outline"
               icon={MessageSquarePlus}
               label={t('assessment.result.createProgram')}
               onPress={() => after(() => router.replace({ pathname: '/athletes/[id]/programs/chat', params: { id: athleteId, assessmentId: session.id } }))}

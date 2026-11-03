@@ -30,6 +30,7 @@ export function useDeleteAthlete() {
         client.invalidateQueries({ queryKey: queryKeys.athletes }),
         client.invalidateQueries({ queryKey: queryKeys.assessments }),
         client.invalidateQueries({ queryKey: queryKeys.programs }),
+        client.invalidateQueries({ queryKey: queryKeys.goals }),
       ]),
   });
 }

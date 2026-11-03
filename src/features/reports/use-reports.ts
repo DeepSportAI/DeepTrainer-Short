@@ -2,7 +2,10 @@ import { useMutation } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 
 import type { Assessment } from '@/features/assessment/model';
+import { assessmentRepository } from '@/features/assessment/repository';
 import { fullName, type Athlete } from '@/features/athletes/model';
+import { goalView } from '@/features/goals/model';
+import { goalRepository } from '@/features/goals/repository';
 import type { ProgramPlan } from '@/features/programs/schema';
 import { useCoachStore } from '@/features/settings/coach-store';
 import { dateToIsoDay } from '@/lib/format/iso-day';
@@ -12,7 +15,10 @@ import { buildAssessmentReportHtml } from './assessment-report';
 import { buildProgramReportHtml } from './program-report';
 import { fileSafe, sharePdf } from './share';
 
-/** Analiz raporu: HTML kurulur, PDF'e basılır, paylaşım sayfası açılır. Fotoğraflar yalnız seçilirse gömülür. */
+/**
+ * Analiz raporu: HTML kurulur, PDF'e basılır, paylaşım sayfası açılır. Fotoğraflar yalnız seçilirse gömülür. Önceki
+ * oturumlar (karşılaştırma, gelişim grafikleri) ve hedefler depodan burada okunur; çağıranlar yalnız oturumu verir.
+ */
 export function useShareAssessmentReport() {
   const { t, i18n } = useTranslation();
   const coachName = useCoachStore((s) => s.coachName);
@@ -36,11 +42,19 @@ export function useShareAssessmentReport() {
             side: m.photoSide ? await photoDataUri(m.photoSide) : null,
           }
         : null;
+      const [sessions, goals] = await Promise.all([
+        assessmentRepository.listForAthlete(athlete.id),
+        goalRepository.listForAthlete(athlete.id),
+      ]);
+      const now = Date.now();
       const html = buildAssessmentReportHtml({
         t,
         lang: i18n.language,
         athlete,
         assessment,
+        sessions,
+        goals: goals.map((goal) => goalView(goal, sessions, now)),
+        now,
         coach: { coachName, organization },
         photos,
         program,

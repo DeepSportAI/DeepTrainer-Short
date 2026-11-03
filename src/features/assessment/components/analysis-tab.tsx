@@ -10,17 +10,17 @@ import { LineChart } from '@/components/ui/line-chart';
 import { ProgressRing } from '@/components/ui/score-ring';
 import { Text } from '@/components/ui/text';
 import { formatAgo } from '@/lib/format/ago';
-import { formatClock } from '@/lib/format/clock';
 import { formatDayMonth, formatShortDate } from '@/lib/format/date';
 import { formatDecimal } from '@/lib/format/quantity';
 import { useColorTokens } from '@/lib/theme/tokens';
 
-import { improved, type AnalysisView, type MetricPoint } from '../analysis';
+import type { AnalysisView } from '../analysis';
 import { levelLabel, recommendationText, stepTitle } from '../labels';
-import { progressOf, type Assessment } from '../model';
+import { lastActivityAt, progressOf, type Assessment } from '../model';
 import { AREAS } from '../protocol';
 import { recommendNext } from '../recommend';
-import { levelChange } from '../scoring';
+import { levelChange, type Gender } from '../scoring';
+import { AreasRadar, BodyPanel, ComparisonCard, PerformancePanel } from './infographics';
 
 /**
  * Analiz sekmesi (Kamil, 2 Kasım 2026: "sporcuların analiz sayfası olsun"): süren test ve sıradaki öneri, son
@@ -30,6 +30,7 @@ import { levelChange } from '../scoring';
 export function AnalysisTab({
   view,
   heightCm,
+  gender,
   onContinue,
   onStart,
   onOpenResult,
@@ -37,6 +38,7 @@ export function AnalysisTab({
 }: {
   view: AnalysisView;
   heightCm: number | null;
+  gender: Gender;
   onContinue: (session: Assessment) => void;
   onStart: () => void;
   onOpenResult: (session: Assessment) => void;
@@ -74,14 +76,9 @@ export function AnalysisTab({
   const previousLevels = view.previousEvaluated?.evaluation?.levels;
   const levels = evaluation?.levels ?? view.draftLevels;
 
-  const delta = (point: MetricPoint, lowerIsBetter = false) => {
-    const better = improved(point, lowerIsBetter);
-    if (better === null || point.previous === null) return null;
-    const Icon = point.value > point.previous ? ArrowUpRight : ArrowDownRight;
-    return <Icon size={16} color={better ? success : destructive} strokeWidth={2.4} />;
-  };
 
   const series = view.measurements.filter((item) => item.weightKg !== null);
+  const waistSeries = view.measurements.filter((item) => item.waistCm !== null);
   const lastMeasure = view.measurements[view.measurements.length - 1] ?? null;
 
   return (
@@ -118,6 +115,9 @@ export function AnalysisTab({
             title={evaluation ? t('athleteDetail.analysis.evaluation') : t('athleteDetail.analysis.draftEvaluation')}
             right={evaluated ? formatShortDate(evaluated.completedAt ?? evaluated.updatedAt) : t('athleteDetail.analysis.draft')}
           />
+          <DetailCard className="mb-2.5 items-center">
+            <AreasRadar current={levels} previous={previousLevels ?? null} />
+          </DetailCard>
           <RowGroup>
             {AREAS.map((area) => {
               const change = levelChange(levels[area], previousLevels?.[area]);
@@ -161,6 +161,13 @@ export function AnalysisTab({
         </>
       ) : null}
 
+      {view.comparison ? (
+        <>
+          <DetailSection title={t('compare.title')} right={formatShortDate(lastActivityAt(view.comparison.before))} />
+          <ComparisonCard comparison={view.comparison} />
+        </>
+      ) : null}
+
       {view.findings.length > 0 || view.notes.length > 0 ? (
         <>
           <DetailSection title={t('athleteDetail.analysis.findings')} right={view.findings.length || null} />
@@ -185,44 +192,12 @@ export function AnalysisTab({
         </>
       ) : null}
 
-      {view.pushUp || view.plank || view.conditioning ? (
+      {view.latest && (view.pushUp || view.plank || view.conditioning) ? (
         <>
-          <DetailSection title={t('athleteDetail.analysis.performance')} />
-          <View className="flex-row flex-wrap gap-2">
-            {view.pushUp ? (
-              <MetricTile
-                label={t('assessment.steps.pushUp.title')}
-                value={String(view.pushUp.value)}
-                unit={t('units.reps')}
-                previous={view.pushUp.previous !== null ? String(view.pushUp.previous) : null}
-                trend={delta(view.pushUp)}
-              />
-            ) : null}
-            {view.plank ? (
-              <MetricTile
-                label={t('assessment.steps.plank.title')}
-                value={String(view.plank.value)}
-                unit={t('units.seconds')}
-                previous={view.plank.previous !== null ? String(view.plank.previous) : null}
-                trend={delta(view.plank)}
-              />
-            ) : null}
-            {view.conditioning ? (
-              <MetricTile
-                label={t(`assessment.conditioning.option.${view.conditioning.option}`)}
-                value={view.conditioning.option === 'row500' ? formatClock(view.conditioning.value) : String(view.conditioning.value)}
-                unit={view.conditioning.option === 'row500' ? t('units.minutes') : t('units.reps')}
-                previous={
-                  view.conditioning.previous === null
-                    ? null
-                    : view.conditioning.option === 'row500'
-                      ? formatClock(view.conditioning.previous)
-                      : String(view.conditioning.previous)
-                }
-                trend={delta(view.conditioning, view.conditioning.option === 'row500')}
-              />
-            ) : null}
-            {view.heartRate ? (
+          <DetailSection title={t('athleteDetail.analysis.performance')} right={view.previous ? t('compare.previousMarker') : null} />
+          <PerformancePanel latest={view.latest} previous={view.previous} gender={gender} />
+          {view.heartRate ? (
+            <View className="mt-2 flex-row">
               <MetricTile
                 icon={<HeartPulse size={14} color={destructive} strokeWidth={2.2} />}
                 label={t('heartRate.maxShort')}
@@ -233,35 +208,37 @@ export function AnalysisTab({
                   view.heartRate.recovery60 !== null ? t('heartRate.recoveryLine', { value: view.heartRate.recovery60 }) : t('heartRate.avgLine', { value: view.heartRate.avg })
                 }
               />
-            ) : null}
-          </View>
+            </View>
+          ) : null}
         </>
       ) : null}
 
-      {lastMeasure ? (
+      {lastMeasure && view.latest ? (
         <>
           <DetailSection title={t('athleteDetail.analysis.measurements')} right={formatAgo(lastMeasure.at)} />
-          <DetailCard className="gap-3">
-            <View className="flex-row">
-              <Measure label={t('assessment.measurements.weight')} value={lastMeasure.weightKg !== null ? formatDecimal(lastMeasure.weightKg, 1) : '—'} unit={t('units.kg')} />
-              <Measure label={t('assessment.measurements.waist')} value={lastMeasure.waistCm !== null ? formatDecimal(lastMeasure.waistCm, 1) : '—'} unit={t('units.cm')} />
-              <Measure
-                label={t('common.bmi')}
-                value={(() => {
-                  const h = lastMeasure.heightCm ?? heightCm;
-                  return lastMeasure.weightKg && h ? formatDecimal(lastMeasure.weightKg / (h / 100) ** 2, 1) : '—';
-                })()}
-              />
-            </View>
-            {series.length >= 2 ? (
+          <BodyPanel latest={view.sessions.find((item) => item.measurements) ?? view.latest} previous={view.sessions.filter((item) => item.measurements)[1] ?? null} gender={gender} heightCm={heightCm} />
+          {series.length >= 2 ? (
+            <DetailCard className="mt-2 gap-2">
+              <Text className="text-[13px] font-semibold text-muted-foreground">{t('compare.weightTrend')}</Text>
               <LineChart
                 points={series.map((item) => ({ x: item.at, value: item.weightKg as number }))}
                 formatValue={(value) => `${formatDecimal(value, 1)} ${t('units.kg')}`}
                 formatX={(x) => formatDayMonth(x)}
                 emptyLabel=""
               />
-            ) : null}
-          </DetailCard>
+            </DetailCard>
+          ) : null}
+          {waistSeries.length >= 2 ? (
+            <DetailCard className="mt-2 gap-2">
+              <Text className="text-[13px] font-semibold text-muted-foreground">{t('compare.waistTrend')}</Text>
+              <LineChart
+                points={waistSeries.map((item) => ({ x: item.at, value: item.waistCm as number }))}
+                formatValue={(value) => `${formatDecimal(value, 1)} ${t('units.cm')}`}
+                formatX={(x) => formatDayMonth(x)}
+                emptyLabel=""
+              />
+            </DetailCard>
+          ) : null}
         </>
       ) : null}
 
@@ -310,18 +287,6 @@ function MetricTile({
       ) : previous !== null ? (
         <Text className="text-[12px] text-muted-foreground">{t('athleteDetail.analysis.previous', { value: previous })}</Text>
       ) : null}
-    </View>
-  );
-}
-
-function Measure({ label, value, unit }: { label: string; value: string; unit?: string }) {
-  return (
-    <View className="flex-1">
-      <Text className="text-[12px] font-semibold text-muted-foreground">{label}</Text>
-      <Text className="text-foreground">
-        <Text className="font-num text-[20px] font-extrabold">{value}</Text>
-        {unit && value !== '—' ? <Text className="text-[12px] font-semibold text-muted-foreground"> {unit}</Text> : null}
-      </Text>
     </View>
   );
 }

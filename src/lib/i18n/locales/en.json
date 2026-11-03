@@ -111,7 +111,9 @@
       "continue": "Continue test",
       "nextLabel": "Recommended next test",
       "programs_one": "{{count}} program",
-      "programs_other": "{{count}} programs"
+      "programs_other": "{{count}} programs",
+      "goals": "Goals: {{parts}}",
+      "checkDue": "Check due"
     },
     "empty": {
       "first": {
@@ -173,7 +175,8 @@
     "tabs": {
       "analysis": "Analysis",
       "history": "History",
-      "programs": "Programs"
+      "programs": "Programs",
+      "goals": "Goals"
     },
     "menu": {
       "edit": "Edit details",
@@ -591,7 +594,8 @@
       "doneDescription": "You can now create a program based on this result or share the PDF report with the athlete.",
       "createProgram": "Create program",
       "report": "PDF report",
-      "backToAthlete": "Back to analysis"
+      "backToAthlete": "Back to analysis",
+      "setGoals": "Set goals"
     }
   },
   "heartRate": {
@@ -1175,7 +1179,9 @@
       "noAssessment": "No evaluation yet; write a general starter program.",
       "noFaults": "no findings",
       "coachNote": "coach note",
-      "cleanMovement": "No findings in the movement tests."
+      "cleanMovement": "No findings in the movement tests.",
+      "goals": "Open goals",
+      "goal": "{{metric}}: {{start}} → {{target}} ({{date}}); now {{now}}, {{status}}"
     },
     "errors": {
       "not_configured": "The program assistant is not configured on the server (ANTHROPIC_API_KEY missing).",
@@ -1249,7 +1255,54 @@
       "noProgram": "No saved program",
       "create": "Create and share PDF",
       "error": "The PDF could not be created. Try again."
-    }
+    },
+    "id": {
+      "age": "Age",
+      "gender": "Gender",
+      "height": "Height",
+      "weight": "Weight",
+      "test": "Test",
+      "testNo": "Test {{number}}",
+      "previous": "Previous test"
+    },
+    "vsPrevious": "vs previous test",
+    "was": "Before: {{level}}",
+    "score": {
+      "title": "Your form score",
+      "sub": "Average of the four areas · 0–100"
+    },
+    "highlights_one": "Your changes in the last {{count}} day",
+    "highlights_other": "Your changes in the last {{count}} days",
+    "body": {
+      "title": "Your body measurements",
+      "finding": "Movement finding",
+      "pain": "Where you reported pain",
+      "none": "No body measurements in this test."
+    },
+    "legend": {
+      "now": "Now",
+      "previous": "Previous test"
+    },
+    "performance": "Your performance",
+    "history": "Your progress charts",
+    "photos": "Photos",
+    "goals": "Your goals",
+    "goal": {
+      "progress": "Progress {{done}}% · expected today {{expected}}%",
+      "legend": "Chart: the grey corridor is the path to the goal, the dashed line is where you should be today, dots are your measurements."
+    },
+    "findingsChange": "Changes in movement findings",
+    "resolved_one": "Resolved ({{count}})",
+    "resolved_other": "Resolved ({{count}})",
+    "persisting_one": "Still there ({{count}})",
+    "persisting_other": "Still there ({{count}})",
+    "added_one": "New ({{count}})",
+    "added_other": "New ({{count}})",
+    "none": "None",
+    "tests": "Your test results",
+    "nextCheck": "Next check",
+    "nextRetest": "Next test",
+    "goalsGlance": "Your goals at a glance"
   },
   "settings": {
     "title": "Settings",
@@ -1287,6 +1340,141 @@
         "title": "Delete all data?",
         "description": "Athletes, tests and programs will be permanently deleted from this device."
       }
+    }
+  },
+  "bands": {
+    "under": "Under",
+    "normal": "Normal",
+    "over": "Over",
+    "obese": "Obese",
+    "increased": "Increased",
+    "high": "High",
+    "athletic": "Athletic",
+    "low": "Low",
+    "fair": "Fair",
+    "good": "Good"
+  },
+  "compare": {
+    "title": "Compared with the previous test",
+    "span_one": "{{count}} day apart",
+    "span_other": "{{count}} days apart",
+    "previous": "Previous",
+    "current": "Now",
+    "previousMarker": "○ previous test",
+    "resolved": "Resolved",
+    "added": "New finding",
+    "weightNote": "Weight {{value}} kg",
+    "weightTrend": "Weight trend",
+    "waistTrend": "Waist trend",
+    "metric": {
+      "pushUp": "Push-up",
+      "plank": "Plank",
+      "burpee": "Burpee (1 min)",
+      "row500": "500 m row",
+      "recovery": "Heart rate recovery",
+      "weight": "Weight",
+      "waist": "Waist",
+      "restingHr": "Resting heart rate"
+    }
+  },
+  "goals": {
+    "list": "Goals",
+    "newGoals": "New goals",
+    "levelStep_one": "{{count}} level",
+    "levelStep_other": "{{count}} levels",
+    "status": {
+      "notStarted": "Just started",
+      "onTrack": "On track",
+      "atRisk": "At risk",
+      "offTrack": "Behind",
+      "achieved": "Achieved",
+      "missed": "Missed"
+    },
+    "metric": {
+      "weight": "Weight",
+      "waist": "Waist",
+      "pushUp": "Push-up (max)",
+      "plank": "Plank hold",
+      "burpee": "Burpee (1 min)",
+      "row500": "500 m row",
+      "restingHr": "Resting heart rate",
+      "recovery": "Heart rate recovery",
+      "level": {
+        "core": "Core level",
+        "glute": "Glute level",
+        "upperBack": "Upper back level",
+        "conditioning": "Conditioning level"
+      }
+    },
+    "reason": {
+      "priority": "Priority area",
+      "coreWeak": "Core needs work",
+      "fatLoss": "Fat loss goal",
+      "conditioning": "Conditioning needs work",
+      "weakestArea": "Weakest area"
+    },
+    "card": {
+      "start": "Start",
+      "now": "Now",
+      "target": "Target",
+      "progressLabel": "Progress {{percent}} percent",
+      "covered": "{{percent}}% of the way",
+      "expectedMark": "▏ where it should be today",
+      "weeksLeft_one": "{{count}} week left",
+      "weeksLeft_other": "{{count}} weeks left",
+      "required": "Needed pace: {{value}} per week",
+      "forecast": "At this pace by {{date}}: {{value}}",
+      "advice": {
+        "atRisk": "Slightly behind the expected line. Review training frequency and nutrition together this week.",
+        "offTrack": "Drifting off the goal. Update the program or move the goal to a realistic value or date."
+      },
+      "achieved": "Goal achieved",
+      "missed": "Time ran out ({{date}})",
+      "checkDue": "Check due · last measured {{ago}}",
+      "nextCheck": "Next check {{date}}",
+      "addCheckin": "Add check",
+      "retestOnly": "Measured at the retest"
+    },
+    "empty": {
+      "title": "No goals yet",
+      "description": "After a test, set measurable goals for 4–12 weeks. Every check compares progress with the expected line, so drift shows up early.",
+      "needsEvaluation": "Finish a test result before setting goals.",
+      "action": "Set goals"
+    },
+    "journey": {
+      "title": "Journey",
+      "span": "{{from}} → {{to}}",
+      "done": "Done",
+      "check": "Check",
+      "today": "Today",
+      "explain": "Large points are the start, the mid retest and the final test; small points are checks. At every check each goal is marked on track, at risk or behind."
+    },
+    "checkin": {
+      "title": "{{metric}} check",
+      "subtitle": "Expected today {{expected}} · target {{target}}",
+      "value": "Measured value",
+      "note": "Note"
+    },
+    "setup": {
+      "title": "Set goals",
+      "lead": "Goals suggested from the test result are selected. Pick a duration and adjust targets with ±; the weekly pace needed is shown below each one.",
+      "duration": "Duration",
+      "weeks_one": "{{count}} week",
+      "weeks_other": "{{count}} weeks",
+      "checkEvery": "Check frequency",
+      "every": {
+        "7": "Every week",
+        "14": "Every two weeks"
+      },
+      "window": "{{from}} → {{to}}",
+      "suggested": "Suggested goals",
+      "others": "Other goals",
+      "decrease": "Decrease",
+      "increase": "Increase",
+      "pace": "{{value}} per week",
+      "tooFast": "{{value}} per week may be too fast; consider a longer duration.",
+      "save_one": "Save {{count}} goal",
+      "save_other": "Save {{count}} goals"
     }
   }
 }

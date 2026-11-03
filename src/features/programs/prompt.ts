@@ -36,6 +36,7 @@ export function systemPrompt(locale: Locale): string {
 
 How to work:
 - Build the program on the assessment in the client context: the area ratings (Core, Glute, Upper back, Conditioning), the priority area the trainer chose, the observed movement faults, pain or injury notes, goals and measurements. Say briefly in "summary" how the assessment shaped the plan.
+- When the client context lists open goals with a target date and a status (on track, at risk, behind), give the goals that are at risk or behind more weight in the plan, and keep the program's progression realistic for the remaining weeks.
 - Follow the trainer's variation: days per week, session length, number of weeks, place and available equipment, plus anything they say in the conversation. Their latest message wins over earlier settings.
 - Keep it safe and appropriate: when the client reported pain, avoid loading that area or use a regression, and note it in "cautions". A first program for a beginner is mostly easy and medium movements.
 - Prefer exercises from the catalog below and copy the catalog ID exactly into "catalogId". Use a movement outside the catalog only when nothing in the catalog fits; then set "catalogId" to null and make "description", "regions" and "difficulty" describe it well, because the trainer sees no video for it.

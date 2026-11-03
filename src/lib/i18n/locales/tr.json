@@ -111,7 +111,9 @@
       "continue": "Teste devam et",
       "nextLabel": "Sıradaki önerilen test",
       "programs_one": "{{count}} program",
-      "programs_other": "{{count}} program"
+      "programs_other": "{{count}} program",
+      "goals": "Hedefler: {{parts}}",
+      "checkDue": "Ölçüm zamanı"
     },
     "empty": {
       "first": {
@@ -173,7 +175,8 @@
     "tabs": {
       "analysis": "Analiz",
       "history": "Geçmiş",
-      "programs": "Programlar"
+      "programs": "Programlar",
+      "goals": "Hedefler"
     },
     "menu": {
       "edit": "Bilgileri düzenle",
@@ -591,7 +594,8 @@
       "doneDescription": "Şimdi bu sonuca göre program oluşturabilir ya da PDF raporunu sporcuyla paylaşabilirsiniz.",
       "createProgram": "Program oluştur",
       "report": "PDF raporu",
-      "backToAthlete": "Analiz sayfasına dön"
+      "backToAthlete": "Analiz sayfasına dön",
+      "setGoals": "Hedef koy"
     }
   },
   "heartRate": {
@@ -1175,7 +1179,9 @@
       "noAssessment": "Henüz değerlendirme yok; genel bir başlangıç programı yaz.",
       "noFaults": "bulgu yok",
       "coachNote": "antrenör notu",
-      "cleanMovement": "Hareket testlerinde bulgu yok."
+      "cleanMovement": "Hareket testlerinde bulgu yok.",
+      "goals": "Açık hedefler",
+      "goal": "{{metric}}: {{start}} → {{target}} ({{date}}); şu an {{now}}, {{status}}"
     },
     "errors": {
       "not_configured": "Program asistanı sunucuda yapılandırılmamış (ANTHROPIC_API_KEY eksik).",
@@ -1249,7 +1255,54 @@
       "noProgram": "Kayıtlı program yok",
       "create": "PDF oluştur ve paylaş",
       "error": "PDF oluşturulamadı. Tekrar deneyin."
-    }
+    },
+    "id": {
+      "age": "Yaş",
+      "gender": "Cinsiyet",
+      "height": "Boy",
+      "weight": "Kilo",
+      "test": "Test",
+      "testNo": "{{number}}. test",
+      "previous": "Önceki test"
+    },
+    "vsPrevious": "önceki teste göre",
+    "was": "Önceki: {{level}}",
+    "score": {
+      "title": "Form puanın",
+      "sub": "Dört alanın ortalaması · 0–100"
+    },
+    "highlights_one": "Son {{count}} günde değişimlerin",
+    "highlights_other": "Son {{count}} günde değişimlerin",
+    "body": {
+      "title": "Vücut ölçümlerin",
+      "finding": "Hareket bulgusu",
+      "pain": "Ağrı bildirdiğin bölge",
+      "none": "Bu testte vücut ölçümü alınmadı."
+    },
+    "legend": {
+      "now": "Şimdi",
+      "previous": "Önceki test"
+    },
+    "performance": "Performansın",
+    "history": "Gelişim grafiklerin",
+    "photos": "Fotoğraflar",
+    "goals": "Hedeflerin",
+    "goal": {
+      "progress": "İlerleme %{{done}} · bugün beklenen %{{expected}}",
+      "legend": "Grafik: gri koridor hedefe giden yol, kesikli çizgi bugün olman gereken yer, noktalar ölçümlerin."
+    },
+    "findingsChange": "Hareket bulgularında değişim",
+    "resolved_one": "Düzelen ({{count}})",
+    "resolved_other": "Düzelenler ({{count}})",
+    "persisting_one": "Devam eden ({{count}})",
+    "persisting_other": "Devam edenler ({{count}})",
+    "added_one": "Yeni çıkan ({{count}})",
+    "added_other": "Yeni çıkanlar ({{count}})",
+    "none": "Yok",
+    "tests": "Test sonuçların",
+    "nextCheck": "Sonraki ölçüm",
+    "nextRetest": "Sonraki test",
+    "goalsGlance": "Hedeflerin bir bakışta"
   },
   "settings": {
     "title": "Ayarlar",
@@ -1287,6 +1340,141 @@
         "title": "Bütün veriler silinsin mi?",
         "description": "Sporcular, testler ve programlar bu cihazdan kalıcı olarak silinir."
       }
+    }
+  },
+  "bands": {
+    "under": "Zayıf",
+    "normal": "Normal",
+    "over": "Fazla kilo",
+    "obese": "Obez",
+    "increased": "Artmış risk",
+    "high": "Yüksek",
+    "athletic": "Atletik",
+    "low": "Düşük",
+    "fair": "Orta",
+    "good": "İyi"
+  },
+  "compare": {
+    "title": "Önceki testle karşılaştırma",
+    "span_one": "{{count}} gün arayla",
+    "span_other": "{{count}} gün arayla",
+    "previous": "Önceki",
+    "current": "Şimdi",
+    "previousMarker": "○ önceki test",
+    "resolved": "Düzeldi",
+    "added": "Yeni bulgu",
+    "weightNote": "Kilo {{value}} kg",
+    "weightTrend": "Kilo gidişatı",
+    "waistTrend": "Bel gidişatı",
+    "metric": {
+      "pushUp": "Push-up",
+      "plank": "Plank",
+      "burpee": "Burpee (1 dk)",
+      "row500": "500 m kürek",
+      "recovery": "Nabız toparlanması",
+      "weight": "Kilo",
+      "waist": "Bel",
+      "restingHr": "Dinlenik nabız"
+    }
+  },
+  "goals": {
+    "list": "Hedefler",
+    "newGoals": "Yeni hedefler",
+    "levelStep_one": "{{count}} kademe",
+    "levelStep_other": "{{count}} kademe",
+    "status": {
+      "notStarted": "Yeni başladı",
+      "onTrack": "Yolunda",
+      "atRisk": "Dikkat",
+      "offTrack": "Geride",
+      "achieved": "Ulaşıldı",
+      "missed": "Kaçırıldı"
+    },
+    "metric": {
+      "weight": "Kilo",
+      "waist": "Bel çevresi",
+      "pushUp": "Push-up (maks.)",
+      "plank": "Plank süresi",
+      "burpee": "Burpee (1 dk)",
+      "row500": "500 m kürek",
+      "restingHr": "Dinlenik nabız",
+      "recovery": "Nabız toparlanması",
+      "level": {
+        "core": "Core seviyesi",
+        "glute": "Glute seviyesi",
+        "upperBack": "Sırt seviyesi",
+        "conditioning": "Kondisyon seviyesi"
+      }
+    },
+    "reason": {
+      "priority": "Öncelik alanı",
+      "coreWeak": "Core gelişmeli",
+      "fatLoss": "Yağ kaybı hedefi",
+      "conditioning": "Kondisyon gelişmeli",
+      "weakestArea": "En zayıf alan"
+    },
+    "card": {
+      "start": "Başlangıç",
+      "now": "Şimdi",
+      "target": "Hedef",
+      "progressLabel": "İlerleme yüzde {{percent}}",
+      "covered": "Yolun %{{percent}} kadarı tamam",
+      "expectedMark": "▏ bugün olması gereken",
+      "weeksLeft_one": "{{count}} hafta kaldı",
+      "weeksLeft_other": "{{count}} hafta kaldı",
+      "required": "Gereken hız: haftada {{value}}",
+      "forecast": "Bu gidişle {{date}} tarihinde: {{value}}",
+      "advice": {
+        "atRisk": "Beklenen çizginin biraz gerisinde. Bu hafta antrenman sıklığını ve beslenmeyi birlikte gözden geçirin.",
+        "offTrack": "Hedeften kopuyor. Ya programı güncelleyin ya da hedefi gerçekçi bir değere / tarihe çekin."
+      },
+      "achieved": "Hedefe ulaşıldı",
+      "missed": "Süre doldu ({{date}})",
+      "checkDue": "Ölçüm zamanı · son ölçüm {{ago}}",
+      "nextCheck": "Sonraki ölçüm {{date}}",
+      "addCheckin": "Ölçüm ekle",
+      "retestOnly": "Tekrar testte ölçülür"
+    },
+    "empty": {
+      "title": "Henüz hedef yok",
+      "description": "Testten sonra 4–12 haftalık ölçülebilir hedefler koyun. Her ölçümde gidişat beklenen çizgiyle karşılaştırılır; kayma olursa erkenden görürsünüz.",
+      "needsEvaluation": "Hedef koymak için önce bir testi sonuçlandırın.",
+      "action": "Hedef koy"
+    },
+    "journey": {
+      "title": "Yolculuk",
+      "span": "{{from}} → {{to}}",
+      "done": "Yapıldı",
+      "check": "Ara ölçüm",
+      "today": "Bugün",
+      "explain": "Büyük noktalar başlangıç, ara test ve final testidir; küçük noktalar ara ölçümler. Her ölçümde hedef \"yolunda / dikkat / geride\" diye işaretlenir."
+    },
+    "checkin": {
+      "title": "{{metric}} ölçümü",
+      "subtitle": "Bugün beklenen {{expected}} · hedef {{target}}",
+      "value": "Ölçülen değer",
+      "note": "Not"
+    },
+    "setup": {
+      "title": "Hedef koy",
+      "lead": "Test sonucuna göre önerilen hedefler işaretli. Süreyi seçin, hedef değerleri ± ile ayarlayın; gereken haftalık hız altta görünür.",
+      "duration": "Süre",
+      "weeks_one": "{{count}} hafta",
+      "weeks_other": "{{count}} hafta",
+      "checkEvery": "Ara ölçüm sıklığı",
+      "every": {
+        "7": "Haftada bir",
+        "14": "İki haftada bir"
+      },
+      "window": "{{from}} → {{to}}",
+      "suggested": "Önerilen hedefler",
+      "others": "Diğer hedefler",
+      "decrease": "Azalt",
+      "increase": "Artır",
+      "pace": "Haftada {{value}}",
+      "tooFast": "Haftada {{value}} hızlı olabilir; süreyi uzatmayı düşünün.",
+      "save_one": "{{count}} hedefi kaydet",
+      "save_other": "{{count}} hedefi kaydet"
     }
   }
 }

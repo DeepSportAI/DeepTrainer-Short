@@ -1,3 +1,4 @@
+import { compareSessions, type SessionComparison } from './compare';
 import { findingsOf, lastActivityAt, openSession, sortedSessions, type Assessment, type Finding } from './model';
 import type { ConditioningOption, TestId } from './protocol';
 import { suggestedLevels, type Gender } from './scoring';
@@ -24,6 +25,8 @@ export type AnalysisView = {
   conditioning: (MetricPoint & { option: ConditioningOption }) | null;
   heartRate: { max: number; avg: number; recovery60: number | null } | null;
   measurements: { at: number; weightKg: number | null; waistCm: number | null; heightCm: number | null }[];
+  /** Önceki değerlendirme → son değerlendirme (yoksa önceki oturum → son oturum). */
+  comparison: SessionComparison | null;
 };
 
 function metric(latest: Assessment | null, previous: Assessment | null, test: TestId): MetricPoint | null {
@@ -46,7 +49,11 @@ export function analysisView(assessments: readonly Assessment[], gender: Gender)
     .map((item) => item.results.conditioning)
     .find((result) => result?.option === conditioningResult?.option && typeof result?.metric === 'number');
 
+  const after = latestEvaluated ?? latest;
+  const before = (latestEvaluated ? evaluated[1] : previous) ?? null;
+
   return {
+    comparison: after && before && after.id !== before.id ? compareSessions(before, after) : null,
     sessions,
     latest,
     previous,

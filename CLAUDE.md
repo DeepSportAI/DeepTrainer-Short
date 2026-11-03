@@ -18,11 +18,23 @@ programı. Expo (React Native) uygulaması; altyapı ve tasarım dili **DeepSpor
 - **Saat entegrasyonu**: sporcunun saatinden / göğüs bandından standart Bluetooth nabız yayını (0x180D). Apple Health /
   Health Connect kullanılmaz — onlar telefonun sahibinin (antrenörün) verisini okur.
 
+Ürün kararları (Kamil, 3 Kasım 2026: "önceki durumla kıyaslama, hedef kontrolü, kaymaması; rapor Tanita gibi"):
+- **Kıyaslama**: analiz sayfası ve rapor son testi bir öncekiyle karşılaştırır (`features/assessment/compare.ts`):
+  seviyeler, ölçüler, düzelen / devam eden / yeni bulgular. Aralık çubukları (VKİ, bel, nabız, performans normları)
+  `features/assessment/bands.ts`'te; `scoring.ts` normları oradan okur.
+- **Hedef yolculuğu** (`features/goals`): testten sonra 4/6/8/12 haftalık ölçülebilir hedefler (öneriler
+  `suggestGoals`), 7 ya da 14 günde bir ara ölçüm, 6 haftadan uzun hedefte yarı yolda ara test, sonda final testi.
+  Gidişat başlangıçtan hedefe düz BEKLENEN çizgiyle kıyaslanır: geride kalma ≤ yolun %10'u "yolunda", ≤ %25
+  "dikkat", fazlası "geride" (`goalView`); kalan haftalara göre gereken hız ve bu gidişle tahmin gösterilir. Aynı
+  ölçütte yeni hedef eskisinin yerini alır.
+- **PDF raporu** infografik (`features/reports/svg.ts`, saf SVG): form puanı halkası, radar (önceki / şimdi), vücut
+  haritası, renkli aralık çubukları, gelişim grafikleri, hedef gidişatı. Program asistanı açık hedefleri bağlamda görür.
+
 ## Durum sahipliği — CRITICAL (Atletik'le aynı)
 
 | Konu | Araç |
 |---|---|
-| Kalıcı veri (sporcu, test oturumu, program) | TanStack Query → `features/*/repository.ts` → `lib/db` |
+| Kalıcı veri (sporcu, test oturumu, hedef, program) | TanStack Query → `features/*/repository.ts` → `lib/db` |
 | Arayüz durumu, canlı nabız bağlantısı | Zustand (global) / `useState` (yerel) |
 | Formlar / doğrulama | react-hook-form / Zod |
 | Stil | Uniwind (Tailwind sınıfları) |
@@ -46,13 +58,14 @@ Veri bugün **cihazda**: native'de SQLite belge tablosu (`lib/db/store.ts`), web
 ```
 src/
   app/          Expo Router rotaları (ince; özellikleri birleştirir). api/program+api.ts = sunucu rotası
-  features/     athletes · assessment · exercises · programs · reports · settings
+  features/     athletes · assessment · exercises · goals · programs · reports · settings
   lib/          db · heart-rate · speech · i18n · query · theme · layout · format · files · storage
   components/   ortak arayüz (ui/ Atletik'ten)
 ```
 
 Özellik bağımlılığı TEK YÖNLÜ ve döngüsüz: `athletes`, `exercises` yaprak; `assessment → athletes`;
-`programs → athletes, assessment, exercises`; `reports → hepsi`; `settings → athletes, assessment` (demo verisi).
+`goals → athletes, assessment`; `programs → athletes, assessment, exercises, goals`; `reports → hepsi`;
+`settings → athletes, assessment, goals, programs` (demo verisi).
 `lib/` hiçbir `features/` dosyasını içe aktarmaz. Sorgu anahtarları `lib/query/keys.ts`'te (başka özelliğin verisini
 geçersiz kılmak için içe aktarma gerekmez).
 

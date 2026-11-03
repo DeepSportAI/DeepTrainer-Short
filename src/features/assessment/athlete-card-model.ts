@@ -16,6 +16,7 @@ export function athleteCardModel(
   athlete: Athlete,
   assessments: readonly Assessment[],
   programCount: number,
+  goalLine: AthleteCardModel['goals'] = null,
 ): AthleteCardModel {
   const summary = summarizeAthlete(assessments);
   // Kartta gösterilen oturum: süren varsa o (devam edilecek), yoksa en son yapılan.
@@ -56,5 +57,6 @@ export function athleteCardModel(
         : { title: t('assessment.result.title'), reason: t('assessment.recommend.reason.result') }
       : null,
     programCount,
+    goals: goalLine,
   };
 }

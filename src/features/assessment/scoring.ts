@@ -1,3 +1,4 @@
+import { NORMS } from './bands';
 import { findingsOf, type Assessment, type Level } from './model';
 import { AREAS, TESTS, TEST_IDS, type Area, type Priority, type TestId } from './protocol';
 
@@ -6,7 +7,7 @@ import { AREAS, TESTS, TEST_IDS, type Area, type Priority, type TestId } from '.
  * değiştirir). Kural bilerek basit ve açık: alan için bakılan her madde 1 birim, "Var" 1 hata; ölçü normun altındaysa
  * 1, sınırdaysa 0,5 hata. Hata oranı < 0,2 → iyi, < 0,5 → orta, aksi → zayıf. Hiç bakılmamış alanın seviyesi yok.
  *
- * Normlar (genel yetişkin, başlangıç seviyesi; kadın / erkek):
+ * Normlar (genel yetişkin, başlangıç seviyesi; kadın / erkek) — sayılar `bands.ts` → `NORMS`:
  *   Plank tutuşu   ≥ 30 sn iyi · 20–29 sınır · < 20 düşük
  *   Push-Up (max)  K ≥ 15 · E ≥ 20 iyi;  K 5–14 · E 10–19 sınır
  *   1 dk burpee    ≥ 18 iyi · 10–17 sınır · < 10 düşük
@@ -21,25 +22,25 @@ export type Gender = 'female' | 'male' | null;
 export type MetricGrade = 0 | 0.5 | 1;
 
 export function gradePlank(seconds: number): MetricGrade {
-  return seconds >= 30 ? 0 : seconds >= 20 ? 0.5 : 1;
+  return seconds >= NORMS.plank.good ? 0 : seconds >= NORMS.plank.fair ? 0.5 : 1;
 }
 
 export function gradePushUps(reps: number, gender: Gender): MetricGrade {
-  const [good, fair] = gender === 'female' ? [15, 5] : [20, 10];
+  const { good, fair } = gender === 'female' ? NORMS.pushUp.female : NORMS.pushUp.male;
   return reps >= good ? 0 : reps >= fair ? 0.5 : 1;
 }
 
 export function gradeBurpees(reps: number): MetricGrade {
-  return reps >= 18 ? 0 : reps >= 10 ? 0.5 : 1;
+  return reps >= NORMS.burpee.good ? 0 : reps >= NORMS.burpee.fair ? 0.5 : 1;
 }
 
 export function gradeRow500(seconds: number, gender: Gender): MetricGrade {
-  const good = gender === 'female' ? 135 : 120;
-  return seconds <= good ? 0 : seconds <= good + 30 ? 0.5 : 1;
+  const good = gender === 'female' ? NORMS.row500.female : NORMS.row500.male;
+  return seconds <= good ? 0 : seconds <= good + NORMS.row500.margin ? 0.5 : 1;
 }
 
 export function gradeRecovery(drop: number): MetricGrade {
-  return drop >= 20 ? 0 : drop >= 12 ? 0.5 : 1;
+  return drop >= NORMS.recovery.good ? 0 : drop >= NORMS.recovery.fair ? 0.5 : 1;
 }
 
 export type AreaScore = {

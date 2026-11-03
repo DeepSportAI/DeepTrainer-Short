@@ -47,6 +47,7 @@ export default function RootLayout() {
             <Stack.Screen name="athletes/new" />
             <Stack.Screen name="athletes/[id]/index" />
             <Stack.Screen name="athletes/[id]/edit" />
+            <Stack.Screen name="athletes/[id]/goals" />
             <Stack.Screen name="athletes/[id]/session/[sessionId]/index" />
             <Stack.Screen name="athletes/[id]/session/[sessionId]/[step]" />
             <Stack.Screen name="athletes/[id]/session/[sessionId]/result" />

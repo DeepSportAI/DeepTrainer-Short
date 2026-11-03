@@ -26,10 +26,11 @@ export const athleteRepository = {
     await store.put('athletes', athlete);
     return athlete;
   },
-  /** Sporcu ile birlikte testleri ve programları da silinir. */
+  /** Sporcu ile birlikte testleri, programları ve hedefleri de silinir. */
   async remove(id: string): Promise<void> {
     await store.removeWhere<{ athleteId: string }>('assessments', (doc) => doc.athleteId === id);
     await store.removeWhere<{ athleteId: string }>('programs', (doc) => doc.athleteId === id);
+    await store.removeWhere<{ athleteId: string }>('goals', (doc) => doc.athleteId === id);
     await store.remove('athletes', id);
   },
 };
